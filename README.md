@@ -10,7 +10,7 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 # License
     MIT License
 
-    Copyright (c) [year] [fullname]
+    Copyright © 2017 Justin Proulx
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
