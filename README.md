@@ -9,3 +9,5 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 
 # License
 This software is licensed under the MIT License, detailed in the file LICENSE.md
+
+In addition to the terms outlined in the MIT License, you must also include a visible and easily useable link to my Twitter account (currently @JustinAlexP). If you really don't want to include one, contact me on Twitter @JustinAlexP and we'll come up with an agreement.
