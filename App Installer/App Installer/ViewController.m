@@ -7,9 +7,7 @@
 //
 
 #import "ViewController.h"
-#include <ifaddrs.h>
-#include <arpa/inet.h>
-#import "GCDWebUploader.h"
+#import "AFNetworking.h"
 
 @interface ViewController ()
 
@@ -51,50 +49,43 @@
     
     [rootDict writeToFile:documentsDirectoryPlistPath atomically:YES];
     
-    //open web server
-    GCDWebUploader* webUploader = [[GCDWebUploader alloc] initWithUploadDirectory:documentsDirectory];
-    [webUploader start];
     
-    NSString *deviceIPAddress = [self getIPAddress];
+    //Internet things
     
-    NSURL *plistURL = [NSURL URLWithString:[[@"itms-services://?action=download-manifest&url=http://" stringByAppendingString:deviceIPAddress] stringByAppendingString:@"/general.plist"]];
+    //Upload .plist
+    //Start up AFNetworking session
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
-    [[UIApplication sharedApplication] openURL:plistURL];
     
-   //[webUploader stop];
-}
+    //url to upload to
+    NSURL *URL = [NSURL URLWithString:@"https://transfer.sh/"];
+    
+    //request URL
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
 
-//shoutout to Saurabh from https://stackoverflow.com/questions/6807788/how-to-get-ip-address-of-iphone-programmatically for this method
-- (NSString *)getIPAddress
-{
     
-    NSString *address = @"error";
-    struct ifaddrs *interfaces = NULL;
-    struct ifaddrs *temp_addr = NULL;
-    int success = 0;
-    // retrieve the current interfaces - returns 0 on success
-    success = getifaddrs(&interfaces);
-    if (success == 0) {
-        // Loop through linked list of interfaces
-        temp_addr = interfaces;
-        while(temp_addr != NULL) {
-            if(temp_addr->ifa_addr->sa_family == AF_INET) {
-                // Check if interface is en0 which is the wifi connection on the iPhone
-                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
-                    // Get NSString from C String
-                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
-                    
-                }
-                
-            }
-            
-            temp_addr = temp_addr->ifa_next;
+    //get plist to upload
+    NSURL *filePath = [NSURL fileURLWithPath:documentsDirectoryPlistPath];
+    
+    //upload file
+    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithRequest:request fromFile:filePath progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error)
+    {
+        
+        if (error)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:[[@"Upload failed.\nReason: \"" stringByAppendingString:[error localizedDescription]] stringByAppendingString:@"\""]  delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
+            [alert show];
+            NSLog(@"Error: %@", error);
         }
-    }
-    // Free memory
-    freeifaddrs(interfaces);
-    return address;
-    
+        else
+        {
+            NSLog(@"Success: %@ %@", response, responseObject);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Ready to install" delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+    }];
+    [uploadTask resume];
 }
 
 - (void)viewDidLoad
