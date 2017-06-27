@@ -1,4 +1,4 @@
-# App-Installer
+# App Installer
 An iOS app designed to allow you to install other (signed) iOS apps to your device.
 
 # Purpose
