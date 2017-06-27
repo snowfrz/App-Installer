@@ -14,6 +14,35 @@
 @end
 
 @implementation ViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    URLTextField.delegate = self;
+    installButton.enabled = NO;
+    [URLTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+}
+
+-(BOOL)shouldEnableInstallButton {
+    if([URLTextField.text isEqualToString:@""]) return NO;
+    return [NSURL URLWithString:URLTextField.text] != nil;
+}
+
+#pragma mark Text Field Delegate & Actions
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return NO;
+}
+
+-(void)textFieldDidChange:(UITextField *)textField {
+    installButton.enabled = [self shouldEnableInstallButton];
+}
+
+#pragma mark Interface Actions
+
 - (IBAction)goToTwitter:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/JustinAlexP"]];
@@ -21,6 +50,8 @@
 
 - (IBAction)installApp:(id)sender
 {
+    [self setInstallButtonToInstalling:YES];
+    
     //Get .plist
     NSString *appBundlePath = [[NSBundle mainBundle] pathForResource:@"general" ofType:@"plist"];
     
@@ -49,9 +80,6 @@
     
     [rootDict writeToFile:documentsDirectoryPlistPath atomically:YES];
     
-    
-    
-    
     // Internet things
     NSData *plistData = [[NSFileManager defaultManager] contentsAtPath:documentsDirectoryPlistPath];
     
@@ -62,14 +90,17 @@
     
     manager.responseSerializer = responseSerializer;
     
-    [manager POST:@"https://file.io/?expires=1d" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
-    {
+    [manager POST:@"https://file.io/?expires=1d"
+             parameters:nil
+             constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileData:plistData name:@"file" fileName:@"general.plist" mimeType:@"application/x-plist"];
         
         // etc.
     }
-         progress:nil success:^(NSURLSessionDataTask *task, id responseObject)
+             progress:nil
+             success:^(NSURLSessionDataTask *task, id responseObject)
     {
+        [self setInstallButtonToInstalling:NO];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Ready to install." preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
@@ -78,41 +109,32 @@
         NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
         
         //NSLog(@"%@", headers);
-        plistDownloadLink = [[NSString alloc] initWithString:[@"https://file.io/" stringByAppendingString:[headers objectForKey:@"key"]]];
+        NSString *plistDownloadLink = [[NSString alloc] initWithString:[@"https://file.io/" stringByAppendingString:[headers objectForKey:@"key"]]];
         //NSLog(@"%@", plistDownloadLink);
         
-        [self downloadApp];
+        [self downloadAppAt:plistDownloadLink];
         
         
         //NSLog(@"Response: %@", responseObject);
     }
           failure:^(NSURLSessionDataTask *task, NSError *error)
     {
-        
+        [self setInstallButtonToInstalling:NO];
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Upload Failed" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
         [self presentViewController:alert animated:YES completion:nil];
-        
         NSLog(@"Error: %@", error);
     }];
 }
 
-- (void)downloadApp
+-(void)setInstallButtonToInstalling:(BOOL)installing {
+    installButton.userInteractionEnabled = !installing;
+    [installButton setTitle:installing ? @"Installing…" : @"Install" forState:UIControlStateNormal];
+}
+
+- (void)downloadAppAt:(NSString *)plistDownloadLink
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"itms-services://?action=download-manifest&url=" stringByAppendingString:plistDownloadLink]]];
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    URLTextField.delegate = self;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return NO;
 }
 
 @end

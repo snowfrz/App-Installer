@@ -13,8 +13,6 @@
     IBOutlet UITextField *URLTextField;
     IBOutlet UIButton *installButton;
     IBOutlet UIButton *Twitter;
-    
-    NSString *plistDownloadLink;
 }
 
 @end
