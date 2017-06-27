@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B543FE1F02937F000128D3 /* InstallButton.m */; };
 		D00632771F01C9FA0041664E /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D00632641F01C9FA0041664E /* AFAutoPurgingImageCache.m */; };
 		D00632781F01C9FA0041664E /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D00632661F01C9FA0041664E /* AFImageDownloader.m */; };
 		D00632791F01C9FA0041664E /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D00632681F01C9FA0041664E /* AFNetworkActivityIndicatorManager.m */; };
@@ -23,7 +24,6 @@
 		D01EA8B61EFCCD9D006FB508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D01EA8B51EFCCD9D006FB508 /* Assets.xcassets */; };
 		D01EA8C41EFCCD9D006FB508 /* App_InstallerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8C31EFCCD9D006FB508 /* App_InstallerTests.m */; };
 		D01EA8CF1EFCCD9D006FB508 /* App_InstallerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8CE1EFCCD9D006FB508 /* App_InstallerUITests.m */; };
-		D01EA8DD1EFCCF6A006FB508 /* Button.png in Resources */ = {isa = PBXBuildFile; fileRef = D01EA8DC1EFCCF6A006FB508 /* Button.png */; };
 		D03166801EFCD62400E8EB77 /* general.plist in Resources */ = {isa = PBXBuildFile; fileRef = D031667F1EFCD62400E8EB77 /* general.plist */; };
 		D031743F1EFCEA6E00E8EB77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D031743E1EFCEA6E00E8EB77 /* libz.tbd */; };
 		D092CBC61F01A0A300238AE0 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D092CBBA1F01A0A300238AE0 /* AFHTTPSessionManager.m */; };
@@ -52,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C3B543FD1F02937F000128D3 /* InstallButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstallButton.h; sourceTree = "<group>"; };
+		C3B543FE1F02937F000128D3 /* InstallButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstallButton.m; sourceTree = "<group>"; };
 		D00632631F01C9FA0041664E /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAutoPurgingImageCache.h; sourceTree = "<group>"; };
 		D00632641F01C9FA0041664E /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAutoPurgingImageCache.m; sourceTree = "<group>"; };
 		D00632651F01C9FA0041664E /* AFImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageDownloader.h; sourceTree = "<group>"; };
@@ -87,7 +89,6 @@
 		D01EA8CA1EFCCD9D006FB508 /* App InstallerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App InstallerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01EA8CE1EFCCD9D006FB508 /* App_InstallerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_InstallerUITests.m; sourceTree = "<group>"; };
 		D01EA8D01EFCCD9D006FB508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D01EA8DC1EFCCF6A006FB508 /* Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Button.png; sourceTree = "<group>"; };
 		D031667F1EFCD62400E8EB77 /* general.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = general.plist; sourceTree = "<group>"; };
 		D031743E1EFCEA6E00E8EB77 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D092CBB41F019E9D00238AE0 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
@@ -156,8 +157,7 @@
 				D00632751F01C9FA0041664E /* UIWebView+AFNetworking.h */,
 				D00632761F01C9FA0041664E /* UIWebView+AFNetworking.m */,
 			);
-			name = "UIKit+AFNetworking";
-			path = "../../../Assets/External App Components/AFNetworking/UIKit+AFNetworking";
+			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
 		D01EA89D1EFCCD9D006FB508 = {
@@ -194,6 +194,8 @@
 				D01EA8B51EFCCD9D006FB508 /* Assets.xcassets */,
 				D01EA8BA1EFCCD9D006FB508 /* Info.plist */,
 				D01EA8A91EFCCD9D006FB508 /* Supporting Files */,
+				C3B543FD1F02937F000128D3 /* InstallButton.h */,
+				C3B543FE1F02937F000128D3 /* InstallButton.m */,
 			);
 			path = "App Installer";
 			sourceTree = "<group>";
@@ -202,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				D031667F1EFCD62400E8EB77 /* general.plist */,
-				D01EA8DC1EFCCF6A006FB508 /* Button.png */,
 				D01EA8AA1EFCCD9D006FB508 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -322,7 +323,6 @@
 				TargetAttributes = {
 					D01EA8A51EFCCD9D006FB508 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5RL29674RT;
 						ProvisioningStyle = Automatic;
 					};
 					D01EA8BE1EFCCD9D006FB508 = {
@@ -364,7 +364,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D01EA8DD1EFCCF6A006FB508 /* Button.png in Resources */,
 				D03166801EFCD62400E8EB77 /* general.plist in Resources */,
 				D01EA8B61EFCCD9D006FB508 /* Assets.xcassets in Resources */,
 				D01EA8B41EFCCD9D006FB508 /* Main.storyboard in Resources */,
@@ -400,6 +399,7 @@
 				D006327B1F01C9FA0041664E /* UIButton+AFNetworking.m in Sources */,
 				D092CBC71F01A0A300238AE0 /* AFNetworkReachabilityManager.m in Sources */,
 				D01EA8B11EFCCD9D006FB508 /* ViewController.m in Sources */,
+				C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */,
 				D006327E1F01C9FA0041664E /* UIRefreshControl+AFNetworking.m in Sources */,
 				D092CBC91F01A0A300238AE0 /* AFURLRequestSerialization.m in Sources */,
 				D00632771F01C9FA0041664E /* AFAutoPurgingImageCache.m in Sources */,
@@ -497,7 +497,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -540,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,11 +552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RL29674RT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					HEADER_SEARCH_PATHS,
 					"=",
@@ -573,11 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RL29674RT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					HEADER_SEARCH_PATHS,
 					"=",

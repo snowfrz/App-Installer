@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate>
 {
     IBOutlet UITextField *URLTextField;
     IBOutlet UIButton *installButton;
     IBOutlet UIButton *Twitter;
-    
-    NSString *plistDownloadLink;
 }
 
 @end

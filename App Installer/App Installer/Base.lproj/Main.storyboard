@@ -22,14 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Installer (1.0) by Justin Proulx (@JustinAlexP)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
-                                <rect key="frame" x="16" y="80" width="343" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Justin Proulx (@JustinAlexP)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
+                                <rect key="frame" x="16" y="72" width="343" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-N1-Do0">
-                                <rect key="frame" x="16" y="288.5" width="343" height="90"/>
+                                <rect key="frame" x="16" y="293.5" width="343" height="80"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direct URL to .ipa file" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P7a-CT-spm">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -41,15 +41,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="done"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZl-Lp-osw">
-                                        <rect key="frame" x="94" y="46" width="155" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="6fJ-mT-oNm"/>
-                                            <constraint firstAttribute="width" constant="155" id="YZ7-du-U1Z"/>
-                                        </constraints>
-                                        <state key="normal" title="Button" image="Button.png"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-hs-AJ8" customClass="InstallButton">
+                                        <rect key="frame" x="147.5" y="46" width="48" height="34"/>
+                                        <color key="tintColor" red="0.0" green="0.68201404809999999" blue="0.93591552970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Install">
+                                            <color key="titleColor" red="0.0" green="0.68201404809999999" blue="0.93591552970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
-                                            <action selector="installApp:" destination="BtY-2J-ecF" eventType="touchUpInside" id="YhV-12-yfI"/>
+                                            <action selector="installApp:" destination="BtY-2J-ecF" eventType="touchUpInside" id="gGq-jQ-K3p"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -76,7 +75,7 @@
                             <constraint firstItem="T9V-Md-AeH" firstAttribute="trailing" secondItem="QLd-Q6-6J3" secondAttribute="trailingMargin" id="5pe-h4-xQA"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerY" secondItem="QLd-Q6-6J3" secondAttribute="centerY" id="Dec-0W-Kyi"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="trailing" secondItem="QLd-Q6-6J3" secondAttribute="trailingMargin" id="RV9-2e-v85"/>
-                            <constraint firstItem="jL1-mA-KXy" firstAttribute="top" secondItem="Sb3-pW-Maw" secondAttribute="bottom" constant="16" id="Rzz-b0-H3y"/>
+                            <constraint firstItem="jL1-mA-KXy" firstAttribute="top" secondItem="Sb3-pW-Maw" secondAttribute="bottom" constant="8" id="Rzz-b0-H3y"/>
                             <constraint firstItem="jL1-mA-KXy" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="UgQ-WJ-In1"/>
                             <constraint firstItem="VjA-8r-tau" firstAttribute="top" secondItem="T9V-Md-AeH" secondAttribute="bottom" constant="20" id="aZ6-cY-Uep"/>
                             <constraint firstItem="T9V-Md-AeH" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="cXZ-zT-TSO"/>
@@ -89,7 +88,7 @@
                     <connections>
                         <outlet property="Twitter" destination="T9V-Md-AeH" id="Li1-yl-7L7"/>
                         <outlet property="URLTextField" destination="P7a-CT-spm" id="khb-pv-hIb"/>
-                        <outlet property="installButton" destination="TZl-Lp-osw" id="sUf-HH-NR5"/>
+                        <outlet property="installButton" destination="AWF-hs-AJ8" id="Uqq-sp-iHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcx-SL-lDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,7 +112,4 @@
             <point key="canvasLocation" x="-317" y="68"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Button.png" width="1000" height="300"/>
-    </resources>
 </document>
