@@ -1,6 +1,10 @@
 # App Installer
 An iOS app designed to allow you to install other (signed) iOS apps to your device.
 
+App file (.ipa)
+
+<a class="github-button" href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0/App.Installer.ipa" data-icon="octicon-cloud-download" data-size="large" aria-label="Download sn0wch1ld/App-Installer on GitHub">Download</a>
+
 # Purpose
 If for some reason, you cannot access the App Store, but have access to the .ipa file, you can put it on a file sharing service and use the raw link to install it using App Installer. Also useful if you're jailbroken with AppSync Unified installed and want an easy way to install your IPAs.
 
