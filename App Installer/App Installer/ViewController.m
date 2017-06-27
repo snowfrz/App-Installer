@@ -52,6 +52,7 @@
     
     //Internet things
     NSURL *fileURL = [NSURL URLWithString:documentsDirectoryPlistPath];
+    NSData *plistData = [[NSFileManager defaultManager] contentsAtPath:documentsDirectoryPlistPath];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -62,7 +63,7 @@
     
     [manager POST:@"https://file.io/?expires=1d" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
     {
-        [formData appendPartWithFileData:[documentsDirectoryPlistPath dataUsingEncoding:NSUTF8StringEncoding] name:@"file" fileName:@"general.plist" mimeType:@"application/x-plist"];
+        [formData appendPartWithFileData:plistData name:@"file" fileName:@"general.plist" mimeType:@"application/x-plist"];
         
         // etc.
     }
