@@ -157,7 +157,7 @@
 				D00632761F01C9FA0041664E /* UIWebView+AFNetworking.m */,
 			);
 			name = "UIKit+AFNetworking";
-			path = "../../../Assets/External App Components/AFNetworking/UIKit+AFNetworking";
+			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
 		D01EA89D1EFCCD9D006FB508 = {
