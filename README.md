@@ -3,8 +3,8 @@ An iOS app designed to allow you to install other (signed) iOS apps to your devi
 
 Designed by Justin Proulx (Sn0wCh1ld), nullpixel and AppleBetas.
 
-<h2>Download</h2>
-<h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0/App.Installer.ipa">App file (.ipa)</a></h4>
+<h2>Download version 1.0.1</h2>
+<h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.1/App.Installer.ipa">App file (.ipa)</a></h4>
 
 # Purpose
 If for some reason, you cannot access the App Store, but have access to the .ipa file, you can put it on a file sharing service and use the raw link to install it using App Installer. Also useful if you're jailbroken with AppSync Unified installed and want an easy way to install your IPAs.
