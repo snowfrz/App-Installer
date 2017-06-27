@@ -51,20 +51,57 @@
     
     
     //Internet things
+    NSURL *fileURL = [NSURL URLWithString:documentsDirectoryPlistPath];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
+    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", nil];
+    
+    manager.responseSerializer = responseSerializer;
+    
+    [manager POST:@"https://file.io/?expires=1d" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+    {
+        [formData appendPartWithFileData:[documentsDirectoryPlistPath dataUsingEncoding:NSUTF8StringEncoding] name:@"file" fileName:@"general.plist" mimeType:@"application/x-plist"];
+        
+        // etc.
+    }
+         progress:nil success:^(NSURLSessionDataTask *task, id responseObject)
+    {
+        NSLog(@"Response: %@", responseObject);
+    }
+          failure:^(NSURLSessionDataTask *task, NSError *error)
+    {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     //Upload .plist
-    //Start up AFNetworking session
+    /*//Start up AFNetworking session
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
     AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
-    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", nil];
+    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", nil];
     
     manager.responseSerializer = responseSerializer;
     
     
     //url to upload to
-    NSURL *URL = [NSURL URLWithString:@"https://transfer.sh/"];
+    NSURL *URL = [NSURL URLWithString:@"https://file.io/?expires=1d"];
     
     //request URL
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
@@ -90,7 +127,7 @@
             [alert show];
         }
     }];
-    [uploadTask resume];
+    [uploadTask resume];*/
 }
 
 - (void)viewDidLoad
