@@ -127,7 +127,8 @@
     }];
 }
 
--(void)setInstallButtonToInstalling:(BOOL)installing {
+-(void)setInstallButtonToInstalling:(BOOL)installing
+{
     installButton.userInteractionEnabled = !installing;
     [installButton setTitle:installing ? @"Installing…" : @"Install" forState:UIControlStateNormal];
 }
