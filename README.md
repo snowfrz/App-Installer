@@ -1,6 +1,8 @@
 # App Installer
 An iOS app designed to allow you to install other (signed) iOS apps to your device.
 
+Designed by Justin Proulx (Sn0wCh1ld), nullpixel and AppleBetas.
+
 <h2>Download</h2>
 <h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0/App.Installer.ipa">App file (.ipa)</a></h4>
 
@@ -27,3 +29,6 @@ In addition to the terms outlined in the MIT License, you must also include a vi
 
 # Demo
 https://twitter.com/JustinAlexP/status/879551446013890561
+
+# Developers
+App Installer was mainly developed by [Justin Proulx](https://www.twitter.com/JustinAlexP), [nullpixel](https://twitter.com/nullriver) and [AppleBetas](https://twitter.com/AppleBetasDev).
