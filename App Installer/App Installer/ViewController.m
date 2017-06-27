@@ -69,66 +69,18 @@
     }
          progress:nil success:^(NSURLSessionDataTask *task, id responseObject)
     {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Ready to install" delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
+        [alert show];
+        
         NSLog(@"Response: %@", responseObject);
     }
           failure:^(NSURLSessionDataTask *task, NSError *error)
     {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:[[@"Upload failed.\nReason: \"" stringByAppendingString:[error localizedDescription]] stringByAppendingString:@"\""]  delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
+        [alert show];
+        
         NSLog(@"Error: %@", error);
     }];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //Upload .plist
-    /*//Start up AFNetworking session
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
-    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", nil];
-    
-    manager.responseSerializer = responseSerializer;
-    
-    
-    //url to upload to
-    NSURL *URL = [NSURL URLWithString:@"https://file.io/?expires=1d"];
-    
-    //request URL
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-
-    
-    //get plist to upload
-    NSURL *filePath = [NSURL fileURLWithPath:documentsDirectoryPlistPath];
-    
-    //upload file
-    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithRequest:request fromFile:filePath progress:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error)
-    {
-        
-        if (error)
-        {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:[[@"Upload failed.\nReason: \"" stringByAppendingString:[error localizedDescription]] stringByAppendingString:@"\""]  delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
-            [alert show];
-            NSLog(@"Error: %@", error);
-        }
-        else
-        {
-            NSLog(@"Success: %@ %@", response, responseObject);
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Ready to install" delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
-            [alert show];
-        }
-    }];
-    [uploadTask resume];*/
 }
 
 - (void)viewDidLoad
