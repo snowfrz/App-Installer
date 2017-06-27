@@ -50,6 +50,8 @@
     [rootDict writeToFile:documentsDirectoryPlistPath atomically:YES];
     
     
+    
+    
     //Internet things
     NSURL *fileURL = [NSURL URLWithString:documentsDirectoryPlistPath];
     NSData *plistData = [[NSFileManager defaultManager] contentsAtPath:documentsDirectoryPlistPath];
@@ -72,7 +74,17 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Ready to install" delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
         [alert show];
         
-        NSLog(@"Response: %@", responseObject);
+        //get download link from headers
+        NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        
+        //NSLog(@"%@", headers);
+        plistDownloadLink = [[NSString alloc] initWithString:[@"https://file.io/" stringByAppendingString:[headers objectForKey:@"key"]]];
+        //NSLog(@"%@", plistDownloadLink);
+        
+        [self downloadApp];
+        
+        
+        //NSLog(@"Response: %@", responseObject);
     }
           failure:^(NSURLSessionDataTask *task, NSError *error)
     {
@@ -81,6 +93,11 @@
         
         NSLog(@"Error: %@", error);
     }];
+}
+
+- (void)downloadApp
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"itms-services://?action=download-manifest&url=" stringByAppendingString:plistDownloadLink]]];
 }
 
 - (void)viewDidLoad
