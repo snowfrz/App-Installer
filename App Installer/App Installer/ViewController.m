@@ -24,7 +24,8 @@
     [URLTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 
--(BOOL)shouldEnableInstallButton {
+-(BOOL)shouldEnableInstallButton
+{
     if([URLTextField.text isEqualToString:@""]) return NO;
     return [NSURL URLWithString:URLTextField.text] != nil;
 }
