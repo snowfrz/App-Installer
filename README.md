@@ -10,6 +10,7 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 - ~Server does not return download link~ FIXED
 - Installation of apps creates a "scar" app on the home screen that cannot be deleted as far as I know. Similar issues arose back in the days of NoJailbreakApps and other such no-jailbreak stores. Scar app disappears eventually if you simply put it in a folder.
 - "Build Generated Issues"-type issues. Minor issues, mostly from deprecated methods used.
+- Works sometimes, but not always for some reason. No clue why.
 
 If you want to contribute to the improvement of App Installer, please
 
