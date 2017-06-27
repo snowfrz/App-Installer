@@ -17,6 +17,9 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 
 Contributions to the improvement of App Installer are greatly appreciated!
 
+# Limitations
+- At this time, apps must be signed already for App Installer to install them. Signed apps include App Store apps, and apps you signed yourself.
+
 # License
 This software is licensed under the MIT License, detailed in the file LICENSE.md
 
