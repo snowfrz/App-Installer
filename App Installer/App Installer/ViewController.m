@@ -71,8 +71,21 @@
     }
          progress:nil success:^(NSURLSessionDataTask *task, id responseObject)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Ready to install" delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController * alertSucess = [UIAlertController
+                alertControllerWithTitle:@"Sucess"
+                                 message:@"Ready To Install"
+                          preferredStyle:UIAlertControllerStyleAlert];
+
+
+
+        UIAlertAction* OKBtn = [UIAlertAction
+                    actionWithTitle:@"OK"
+                              style:UIAlertActionStyleDefault
+                            handler:^(UIAlertAction * action) {
+                                NSLog(@"OK Clicked");
+                            }];
+        [alertSucess addAction:OKBtn];
+        [self presentViewController:alertSucess animated:YES completion:nil];
         
         //get download link from headers
         NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
@@ -88,8 +101,23 @@
     }
           failure:^(NSURLSessionDataTask *task, NSError *error)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:[[@"Upload failed.\nReason: \"" stringByAppendingString:[error localizedDescription]] stringByAppendingString:@"\""]  delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController * alertFail = [UIAlertController
+                alertControllerWithTitle:@"Failure"
+                                 message:[[@"Upload failed.\nReason: \"" stringByAppendingString:[error localizedDescription]]
+                          preferredStyle:UIAlertControllerStyleAlert];
+
+
+
+        UIAlertAction* FailOKBtn = [UIAlertAction
+                    actionWithTitle:@"OK"
+                              style:UIAlertActionStyleDefault
+                            handler:^(UIAlertAction * action) {
+                                NSLog(@"Failed; But User Hit OK");
+                                NSLog(@"Reason: %@", error);
+                                // Put whatever you want in here; it all gets executed if the user hits OK
+                            }];
+        [alertFail addAction:FailOKBtn];
+        [self presentViewController:alertFail animated:YES completion:nil];
         
         NSLog(@"Error: %@", error);
     }];
