@@ -12,7 +12,7 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 - "Build Generated Issues"-type issues. Minor issues, mostly from deprecated methods used.
 - Works sometimes, but not always for some reason. No clue why.
 
-If you want to contribute to the improvement of App Installer, please
+Contributions to the improvement of App Installer are greatly appreciated!
 
 # License
 This software is licensed under the MIT License, detailed in the file LICENSE.md
