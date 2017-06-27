@@ -156,7 +156,6 @@
 				D00632751F01C9FA0041664E /* UIWebView+AFNetworking.h */,
 				D00632761F01C9FA0041664E /* UIWebView+AFNetworking.m */,
 			);
-			name = "UIKit+AFNetworking";
 			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
@@ -322,7 +321,6 @@
 				TargetAttributes = {
 					D01EA8A51EFCCD9D006FB508 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5RL29674RT;
 						ProvisioningStyle = Automatic;
 					};
 					D01EA8BE1EFCCD9D006FB508 = {
@@ -497,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -540,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,11 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RL29674RT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					HEADER_SEARCH_PATHS,
 					"=",
@@ -573,11 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RL29674RT;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				DEVELOPMENT_TEAM = "";
 				HEADER_SEARCH_PATHS = (
 					HEADER_SEARCH_PATHS,
 					"=",

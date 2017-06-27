@@ -52,8 +52,7 @@
     
     
     
-    //Internet things
-    NSURL *fileURL = [NSURL URLWithString:documentsDirectoryPlistPath];
+    // Internet things
     NSData *plistData = [[NSFileManager defaultManager] contentsAtPath:documentsDirectoryPlistPath];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -71,8 +70,9 @@
     }
          progress:nil success:^(NSURLSessionDataTask *task, id responseObject)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Ready to install" delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Ready to install." preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         
         //get download link from headers
         NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
@@ -88,8 +88,10 @@
     }
           failure:^(NSURLSessionDataTask *task, NSError *error)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure" message:[[@"Upload failed.\nReason: \"" stringByAppendingString:[error localizedDescription]] stringByAppendingString:@"\""]  delegate:self cancelButtonTitle: @"OK" otherButtonTitles:nil];
-        [alert show];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Upload Failed" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
         
         NSLog(@"Error: %@", error);
     }];
@@ -102,10 +104,9 @@
 
 - (void)viewDidLoad
 {
-    URLTextField.delegate = self;
-    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    URLTextField.delegate = self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -113,13 +114,5 @@
     [textField resignFirstResponder];
     return NO;
 }
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 @end
