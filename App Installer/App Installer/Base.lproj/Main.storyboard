@@ -68,16 +68,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Justin"/>
+                                                <connections>
+                                                    <action selector="goToJustinTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="jxI-QD-Z3w"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC">
                                                 <rect key="frame" x="114.5" y="0.0" width="114" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="AppleBetas"/>
+                                                <connections>
+                                                    <action selector="goToAppleBetasTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="OdZ-ge-4zG"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d">
                                                 <rect key="frame" x="228.5" y="0.0" width="114.5" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="nullriver"/>
+                                                <connections>
+                                                    <action selector="goTonullriverTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="bdZ-eM-RSy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -101,7 +110,10 @@
                     <navigationItem key="navigationItem" title="App Installer" id="WgR-Wp-XZA"/>
                     <connections>
                         <outlet property="URLTextField" destination="P7a-CT-spm" id="khb-pv-hIb"/>
+                        <outlet property="appleBetasTwitter" destination="bcZ-G4-XfC" id="l5f-kG-vwd"/>
                         <outlet property="installButton" destination="AWF-hs-AJ8" id="Uqq-sp-iHD"/>
+                        <outlet property="justinTwitter" destination="cLJ-WM-Cau" id="vEm-AL-bBI"/>
+                        <outlet property="nullriverTwitter" destination="kQ4-dP-K9d" id="RrU-PS-kxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcx-SL-lDd" userLabel="First Responder" sceneMemberID="firstResponder"/>

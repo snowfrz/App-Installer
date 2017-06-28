@@ -44,10 +44,19 @@
 
 #pragma mark Interface Actions
 
-- (IBAction)goToTwitter:(id)sender
+- (IBAction)goToJustinTwitter:(id)sender
 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/JustinAlexP"]];
 }
+- (IBAction)goToAppleBetasTwitter:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/AppleBetasDev"]];
+}
+- (IBAction)goTonullriverTwitter:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/nullriver"]];
+}
+
 
 - (IBAction)installApp:(id)sender
 {
