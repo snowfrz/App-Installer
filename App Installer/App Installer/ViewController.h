@@ -12,7 +12,10 @@
 {
     IBOutlet UITextField *URLTextField;
     IBOutlet UIButton *installButton;
-    IBOutlet UIButton *Twitter;
+    
+    IBOutlet UIButton *justinTwitter;
+    IBOutlet UIButton *nullriverTwitter;
+    IBOutlet UIButton *appleBetasTwitter;
 }
 
 @end
