@@ -3,13 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>Version</key>
-	<dict>
-		<key>Major</key>
-		<integer>1</integer>
-		<key>Minor</key>
-		<integer>0</integer>
-		<key>Incremental</key>
-		<integer>0</integer>
-	</dict>
+	<string>1.0.2</string>
 </dict>
 </plist>
