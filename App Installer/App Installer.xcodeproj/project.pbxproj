@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B241905BD93641FDDBB7E3F /* AppInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B241332781C43DAEF29948A /* AppInstaller.m */; };
 		C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B543FE1F02937F000128D3 /* InstallButton.m */; };
 		D01EA8AB1EFCCD9D006FB508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8AA1EFCCD9D006FB508 /* main.m */; };
 		D01EA8AE1EFCCD9D006FB508 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8AD1EFCCD9D006FB508 /* AppDelegate.m */; };
@@ -35,7 +36,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B8CEF2371F04B9B8006CF31A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9B2412ED21B256EC31ED82CA /* AppInstaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInstaller.h; sourceTree = "<group>"; };
+		9B241332781C43DAEF29948A /* AppInstaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInstaller.m; sourceTree = "<group>"; };
 		C3B543FD1F02937F000128D3 /* InstallButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstallButton.h; sourceTree = "<group>"; };
 		C3B543FE1F02937F000128D3 /* InstallButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstallButton.m; sourceTree = "<group>"; };
 		D01EA8A61EFCCD9D006FB508 /* App Installer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Installer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +69,7 @@
 		D01EA8CA1EFCCD9D006FB508 /* App InstallerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "App InstallerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01EA8CE1EFCCD9D006FB508 /* App_InstallerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_InstallerUITests.m; sourceTree = "<group>"; };
 		D01EA8D01EFCCD9D006FB508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D031667F1EFCD62400E8EB77 /* general.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = general.plist; sourceTree = "<group>"; };
+		D031667F1EFCD62400E8EB77 /* general.plist */ = {isa = PBXFileReference; fileEncoding = 1; lastKnownFileType = text.plist.xml; path = general.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +130,8 @@
 				D01EA8A91EFCCD9D006FB508 /* Supporting Files */,
 				C3B543FD1F02937F000128D3 /* InstallButton.h */,
 				C3B543FE1F02937F000128D3 /* InstallButton.m */,
+				9B241332781C43DAEF29948A /* AppInstaller.m */,
+				9B2412ED21B256EC31ED82CA /* AppInstaller.h */,
 			);
 			path = "App Installer";
 			sourceTree = "<group>";
@@ -155,6 +173,7 @@
 				D01EA8A21EFCCD9D006FB508 /* Sources */,
 				D01EA8A31EFCCD9D006FB508 /* Frameworks */,
 				D01EA8A41EFCCD9D006FB508 /* Resources */,
+				B8CEF2371F04B9B8006CF31A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -212,7 +231,7 @@
 				TargetAttributes = {
 					D01EA8A51EFCCD9D006FB508 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5RL29674RT;
+						DevelopmentTeam = 4U5LP5YD5R;
 						ProvisioningStyle = Automatic;
 					};
 					D01EA8BE1EFCCD9D006FB508 = {
@@ -285,6 +304,7 @@
 				C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */,
 				D01EA8AE1EFCCD9D006FB508 /* AppDelegate.m in Sources */,
 				D01EA8AB1EFCCD9D006FB508 /* main.m in Sources */,
+				9B241905BD93641FDDBB7E3F /* AppInstaller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,7 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RL29674RT;
+				DEVELOPMENT_TEAM = 4U5LP5YD5R;
 				HEADER_SEARCH_PATHS = (
 					HEADER_SEARCH_PATHS,
 					"=",
@@ -444,7 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RL29674RT;
+				DEVELOPMENT_TEAM = 4U5LP5YD5R;
 				HEADER_SEARCH_PATHS = (
 					HEADER_SEARCH_PATHS,
 					"=",

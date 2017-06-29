@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SafariServices/SafariServices.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate, SFSafariViewControllerDelegate>
 {
     IBOutlet UITextField *URLTextField;
     IBOutlet UIButton *installButton;
-    
-    IBOutlet UIButton *justinTwitter;
-    IBOutlet UIButton *nullriverTwitter;
-    IBOutlet UIButton *appleBetasTwitter;
 }
+-(void)setURL:(NSString *)url;
 
 @end
 

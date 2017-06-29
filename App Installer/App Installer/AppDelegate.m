@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -47,5 +48,10 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation {
+    ViewController *mainViewController = self.window.rootViewController.childViewControllers[0];
+    [mainViewController setURL:[url.description stringByReplacingOccurrencesOfString:@"app-installer://" withString:@""]];
+    
+    return YES;
+}
 @end
