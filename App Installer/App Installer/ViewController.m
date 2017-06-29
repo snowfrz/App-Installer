@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "AFNetworking.h"
 
 @interface ViewController ()
 
@@ -18,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
     URLTextField.delegate = self;
     installButton.enabled = NO;
     [URLTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
@@ -66,7 +65,7 @@
     NSString *appBundlePath = [[NSBundle mainBundle] pathForResource:@"general" ofType:@"plist"];
     
     //get documents directory
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     //delete previous install file if it exists
@@ -86,55 +85,69 @@
     NSString *appURL = URLTextField.text;
     
     //sets the url to the correct place
-    [[[[[rootDict objectForKey:@"items"] objectAtIndex:0] objectForKey:@"assets"] objectAtIndex:0] setObject:appURL forKey:@"url"];
+    [[[[rootDict[@"items"] objectAtIndex:0] objectForKey:@"assets"] objectAtIndex:0] setObject:appURL forKey:@"url"];
     
     [rootDict writeToFile:documentsDirectoryPlistPath atomically:YES];
     
     // Internet things
+    // setup local
+    NSString *boundary = [[NSUUID UUID] UUIDString];
     NSData *plistData = [[NSFileManager defaultManager] contentsAtPath:documentsDirectoryPlistPath];
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    // setup session
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    AFHTTPResponseSerializer *responseSerializer = [AFHTTPResponseSerializer serializer];
-    responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", nil];
+    // set body of the request
+    NSMutableData *body = [NSMutableData data];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Disposition:form-data; name=\"file\"; filename=\"general.plist\"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[@"Content-Type: application/x-plist\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:plistData];
+    [body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
     
-    manager.responseSerializer = responseSerializer;
+    // seutup request
+    NSMutableURLRequest *request = [NSMutableURLRequest new];
+    [request setURL:[NSURL URLWithString:@"https://file.io/?expires=1d"]];
+    [request setHTTPMethod:@"POST"];
+    [request addValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary] forHTTPHeaderField: @"Content-Type"];
+    [request setHTTPBody:body];
     
-    [manager POST:@"https://file.io/?expires=1d"
-             parameters:nil
-             constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:plistData name:@"file" fileName:@"general.plist" mimeType:@"application/x-plist"];
-        
-        // etc.
-    }
-             progress:nil
-             success:^(NSURLSessionDataTask *task, id responseObject)
-    {
-        [self setInstallButtonToInstalling:NO];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Ready to install." preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-        
-        //get download link from headers
-        NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        
-        //NSLog(@"%@", headers);
-        NSString *plistDownloadLink = [[NSString alloc] initWithString:[@"https://file.io/" stringByAppendingString:[headers objectForKey:@"key"]]];
-        //NSLog(@"%@", plistDownloadLink);
-        
-        [self downloadAppAt:plistDownloadLink];
-        
-        
-        //NSLog(@"Response: %@", responseObject);
-    }
-          failure:^(NSURLSessionDataTask *task, NSError *error)
-    {
-        [self setInstallButtonToInstalling:NO];
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Upload Failed" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
-        [self presentViewController:alert animated:YES completion:nil];
-        NSLog(@"Error: %@", error);
-    }];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+                                      {
+                                          //NSLog(@"Response: %@", response.description);
+                                          // the task completed without error
+                                          if (!error) {
+                                              // handle ui on the main thread
+                                              dispatch_async(dispatch_get_main_queue(),^{
+                                                  [self setInstallButtonToInstalling:NO];
+                                              });
+                                              
+                                              //get download link from headers
+                                              NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+                                              NSLog(@"Error parsing headers: %@", error.localizedDescription);
+                                              //NSLog(@"%@", headers);
+                                              
+                                              NSString *plistDownloadLink = [[NSString alloc] initWithString:[@"https://file.io/" stringByAppendingString:headers[@"key"]]];
+                                              NSLog(@"%@", plistDownloadLink);
+                                              
+                                              [self downloadAppAt:plistDownloadLink];
+                                          }
+                                          // the task resulted in an error return the error
+                                          else {
+                                              dispatch_async(dispatch_get_main_queue(),^{
+                                                  [self setInstallButtonToInstalling:NO];
+                                                  
+                                                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Upload Failed" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+                                                  [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+                                                  [self presentViewController:alert animated:YES completion:nil];
+                                                  //NSLog(@"Error: %@", error);
+                                              });
+                                          }
+                                      }];
+    
+    [dataTask resume];
 }
 
 -(void)setInstallButtonToInstalling:(BOOL)installing
@@ -145,6 +158,7 @@
 
 - (void)downloadAppAt:(NSString *)plistDownloadLink
 {
+    NSLog(@"path: %@", plistDownloadLink);
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"itms-services://?action=download-manifest&url=" stringByAppendingString:plistDownloadLink]]];
 }
 
