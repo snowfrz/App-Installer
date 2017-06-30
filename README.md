@@ -4,8 +4,8 @@ An iOS app designed to allow you to install other (signed) iOS apps to your devi
 Designed by Justin Proulx (Sn0wCh1ld), nullpixel and AppleBetas.
 
 <h2>Download</h2>
-~<h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.2.1/App.Installer.ipa">1.0.2.1 (.ipa)</a></h4>~
-<h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.2.0/App.Installer.ipa">1.0.2.0 (.ipa)</a></h4>
+<h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.2.1/App.Installer.ipa">1.0.2.1 (.ipa)</a></h4>
+<h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.2.0/App.Installer.ipa">~1.0.2.0 (.ipa)~</a></h4>
 <h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.1/App.Installer.ipa">1.0.1 (.ipa)</a></h4>
 <h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0/App.Installer.ipa">1.0 (.ipa)</a></h4>
 
