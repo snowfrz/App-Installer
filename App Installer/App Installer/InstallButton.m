@@ -22,7 +22,7 @@
 -(void)setHighlighted:(BOOL)highlighted
 {
     [UIView animateWithDuration:0.15 animations:^{
-        self.alpha = highlighted ? 0.8 : 1;
+        self.alpha = highlighted ? 0.8f : 1.0f;
         self.transform = highlighted ? CGAffineTransformScale(CGAffineTransformIdentity, 0.95, 0.95) : CGAffineTransformIdentity;
     }];
 }
@@ -37,7 +37,7 @@
 {
     [super setEnabled:enabled];
     [UIView animateWithDuration:0.15 animations:^{
-        self.alpha = enabled ? 1 : 0.5;
+        self.alpha = enabled ? 1.0f : 0.5f;
     }];
 }
 

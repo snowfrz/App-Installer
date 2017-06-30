@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80B19EE1F05E9120048E629 /* AppInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = B80B19ED1F05E9120048E629 /* AppInstaller.m */; };
 		C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B543FE1F02937F000128D3 /* InstallButton.m */; };
 		D01EA8AB1EFCCD9D006FB508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8AA1EFCCD9D006FB508 /* main.m */; };
 		D01EA8AE1EFCCD9D006FB508 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8AD1EFCCD9D006FB508 /* AppDelegate.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B80B19EC1F05E9120048E629 /* AppInstaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInstaller.h; sourceTree = "<group>"; };
+		B80B19ED1F05E9120048E629 /* AppInstaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInstaller.m; sourceTree = "<group>"; };
 		C3B543FD1F02937F000128D3 /* InstallButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstallButton.h; sourceTree = "<group>"; };
 		C3B543FE1F02937F000128D3 /* InstallButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstallButton.m; sourceTree = "<group>"; };
 		D01EA8A61EFCCD9D006FB508 /* App Installer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Installer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +114,8 @@
 				D01EA8AD1EFCCD9D006FB508 /* AppDelegate.m */,
 				D01EA8AF1EFCCD9D006FB508 /* ViewController.h */,
 				D01EA8B01EFCCD9D006FB508 /* ViewController.m */,
+				B80B19EC1F05E9120048E629 /* AppInstaller.h */,
+				B80B19ED1F05E9120048E629 /* AppInstaller.m */,
 				D01EA8B21EFCCD9D006FB508 /* Main.storyboard */,
 				D01EA8B51EFCCD9D006FB508 /* Assets.xcassets */,
 				D01EA8BA1EFCCD9D006FB508 /* Info.plist */,
@@ -225,7 +230,7 @@
 				TargetAttributes = {
 					D01EA8A51EFCCD9D006FB508 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5RL29674RT;
+						DevelopmentTeam = 4U5LP5YD5R;
 						ProvisioningStyle = Automatic;
 					};
 					D01EA8BE1EFCCD9D006FB508 = {
@@ -296,6 +301,7 @@
 			files = (
 				D01EA8B11EFCCD9D006FB508 /* ViewController.m in Sources */,
 				C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */,
+				B80B19EE1F05E9120048E629 /* AppInstaller.m in Sources */,
 				D01EA8AE1EFCCD9D006FB508 /* AppDelegate.m in Sources */,
 				D055E2121F05C00D00421536 /* TwitterButtons.m in Sources */,
 				D01EA8AB1EFCCD9D006FB508 /* main.m in Sources */,
@@ -441,7 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RL29674RT;
+				DEVELOPMENT_TEAM = 4U5LP5YD5R;
 				HEADER_SEARCH_PATHS = (
 					HEADER_SEARCH_PATHS,
 					"=",
@@ -458,7 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5RL29674RT;
+				DEVELOPMENT_TEAM = 4U5LP5YD5R;
 				HEADER_SEARCH_PATHS = (
 					HEADER_SEARCH_PATHS,
 					"=",

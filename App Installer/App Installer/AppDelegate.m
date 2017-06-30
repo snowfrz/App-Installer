@@ -59,4 +59,12 @@
 }
 
 
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation {
+    ViewController *mainViewController = self.window.rootViewController.childViewControllers[0];
+    [mainViewController urlSchemeInstallWithURL:[url.description stringByReplacingOccurrencesOfString:@"app-installer://" withString:@""]];
+    
+    return YES;
+}
+
+
 @end
