@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOW-is-eq7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOW-is-eq7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -48,7 +47,7 @@
                                             <color key="titleColor" red="0.0" green="0.68201404809999999" blue="0.93591552970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="installApp:withAppURL:" destination="BtY-2J-ecF" eventType="touchUpInside" id="6wU-jF-0VJ"/>
+                                            <action selector="installApp" destination="BtY-2J-ecF" eventType="touchUpInside" id="Zox-kb-BFR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -70,7 +69,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Justin"/>
                                                 <connections>
-                                                    <action selector="goToJustinTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="jxI-QD-Z3w"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="Dhh-jJ-Yv0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC" customClass="TwitterButtons">
@@ -78,7 +77,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="AppleBetas"/>
                                                 <connections>
-                                                    <action selector="goToAppleBetasTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="OdZ-ge-4zG"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="GV1-vx-DTY"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d" customClass="TwitterButtons">
@@ -86,7 +85,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="nullriver"/>
                                                 <connections>
-                                                    <action selector="goTonullriverTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="bdZ-eM-RSy"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="cNQ-QC-noh"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -112,10 +111,7 @@
                     <navigationItem key="navigationItem" title="App Installer" id="WgR-Wp-XZA"/>
                     <connections>
                         <outlet property="URLTextField" destination="P7a-CT-spm" id="khb-pv-hIb"/>
-                        <outlet property="appleBetasTwitter" destination="bcZ-G4-XfC" id="l5f-kG-vwd"/>
                         <outlet property="installButton" destination="AWF-hs-AJ8" id="Uqq-sp-iHD"/>
-                        <outlet property="justinTwitter" destination="cLJ-WM-Cau" id="vEm-AL-bBI"/>
-                        <outlet property="nullriverTwitter" destination="kQ4-dP-K9d" id="RrU-PS-kxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcx-SL-lDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
