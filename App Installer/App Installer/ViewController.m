@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad
 {
+    [self checkForUpdates];
+    
     [super viewDidLoad];
     
     URLTextField.delegate = self;
@@ -29,7 +31,50 @@
     return [NSURL URLWithString:URLTextField.text] != nil;
 }
 
-#pragma mark Text Field Delegate & Actions
+
+
+#pragma mark – initial configuration
+- (void)checkForUpdates
+{
+    //check for update
+    NSURL  *url = [NSURL URLWithString:@"https://raw.githubusercontent.com/Sn0wCh1ld/App-Installer/master/appinfo.plist"];
+    NSData *appInfoData = [NSData dataWithContentsOfURL:url];
+    
+    if (appInfoData)
+    {
+        //get documents directory
+        NSString *documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        
+        NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"appinfo.plist"];
+        [appInfoData writeToFile:filePath atomically:YES];
+        
+        NSDictionary *appInfoDictionary = [NSDictionary dictionaryWithContentsOfFile:filePath];
+        
+        NSString *latestVersion = appInfoDictionary[@"Version"];
+        NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+        
+        if ([latestVersion compare:currentVersion options:NSNumericSearch] == NSOrderedDescending)
+        {
+            // latest version is higher than the current version
+            // don't change versionning convention from major.minor.increment.quickfix
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Update available" message:[[@"A new version of App Installer has been released. Please download version " stringByAppendingString:latestVersion] stringByAppendingString:@" from GitHub and install it using Impactor"] preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *githubLinkButtonAction = [UIAlertAction actionWithTitle:@"GitHub" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+            {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/Sn0wCh1ld/App-Installer/blob/master/README.md"]];
+            }];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+            [alert addAction:githubLinkButtonAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+    }
+
+}
+
+
+#pragma mark – Text Field Delegate & Actions
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -41,7 +86,7 @@
     installButton.enabled = [self shouldEnableInstallButton];
 }
 
-#pragma mark Interface Actions
+#pragma mark – Interface Actions
 
 - (IBAction)goToJustinTwitter:(id)sender
 {
@@ -56,8 +101,13 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/nullriver"]];
 }
 
+- (void)pasteboardInstallAction
+{
+    [installButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [self installApp:nil withAppURL:[UIPasteboard generalPasteboard].string];
+}
 
-- (IBAction)installApp:(id)sender
+- (IBAction)installApp:(id)sender withAppURL:(NSString *)appURL
 {
     [self setInstallButtonToInstalling:YES];
     
@@ -82,7 +132,10 @@
     //get root
     NSMutableDictionary *rootDict = [[NSMutableDictionary alloc] initWithContentsOfFile:documentsDirectoryPlistPath];
     
-    NSString *appURL = URLTextField.text;
+    if ([URLTextField.text length] > 0)
+    {
+        appURL = URLTextField.text;
+    }
     
     //sets the url to the correct place
     [[[[rootDict[@"items"] objectAtIndex:0] objectForKey:@"assets"] objectAtIndex:0] setObject:appURL forKey:@"url"];
@@ -113,39 +166,40 @@
     [request addValue:[NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary] forHTTPHeaderField: @"Content-Type"];
     [request setHTTPBody:body];
     
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-                                      {
-                                          //NSLog(@"Response: %@", response.description);
-                                          // the task completed without error
-                                          if (!error) {
-                                              // handle ui on the main thread
-                                              dispatch_async(dispatch_get_main_queue(),^{
-                                                  [self setInstallButtonToInstalling:NO];
-                                              });
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+        //NSLog(@"Response: %@", response.description);
+        // the task completed without error
+        if (!error)
+        {
+            // handle ui on the main thread
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self setInstallButtonToInstalling:NO];
+            });
                                               
-                                              //get download link from headers
-                                              NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-                                              NSLog(@"Error parsing headers: %@", error.localizedDescription);
-                                              //NSLog(@"%@", headers);
+            //get download link from headers
+            NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+            NSLog(@"Error parsing headers: %@", error.localizedDescription);
+            //NSLog(@"%@", headers);
                                               
-                                              NSString *plistDownloadLink = [[NSString alloc] initWithString:[@"https://file.io/" stringByAppendingString:headers[@"key"]]];
-                                              NSLog(@"%@", plistDownloadLink);
+            NSString *plistDownloadLink = [[NSString alloc] initWithString:[@"https://file.io/" stringByAppendingString:headers[@"key"]]];
+            NSLog(@"%@", plistDownloadLink);
                                               
-                                              [self downloadAppAt:plistDownloadLink];
-                                          }
-                                          // the task resulted in an error return the error
-                                          else {
-                                              dispatch_async(dispatch_get_main_queue(),^{
-                                                  [self setInstallButtonToInstalling:NO];
+            [self downloadAppAt:plistDownloadLink];
+        }
+        // else if the task resulted in an error, return the error
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(),^{
+                [self setInstallButtonToInstalling:NO];
                                                   
-                                                  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Upload Failed" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
-                                                  [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
-                                                  [self presentViewController:alert animated:YES completion:nil];
-                                                  //NSLog(@"Error: %@", error);
-                                              });
-                                          }
-                                      }];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Upload Failed" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
+                [self presentViewController:alert animated:YES completion:nil];
+                //NSLog(@"Error: %@", error);
+            });
+        }
+    }];
     
     [dataTask resume];
 }

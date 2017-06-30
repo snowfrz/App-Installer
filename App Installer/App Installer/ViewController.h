@@ -18,5 +18,7 @@
     IBOutlet UIButton *appleBetasTwitter;
 }
 
+- (void)pasteboardInstallAction;
+
 @end
 
