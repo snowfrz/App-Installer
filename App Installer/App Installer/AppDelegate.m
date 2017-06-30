@@ -16,7 +16,16 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    UIApplicationShortcutItem *item = [launchOptions valueForKey:UIApplicationLaunchOptionsShortcutItemKey];
+    
+    if ([item.type isEqualToString:@"com.lbastudios.App-Installer.installFromClipboard"])
+    {
+        ViewController *viewController = [[ViewController alloc] init];
+        [viewController pasteboardInstallAction ];
+    }
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -39,7 +48,8 @@
 }
 
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
@@ -48,10 +58,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation {
     ViewController *mainViewController = self.window.rootViewController.childViewControllers[0];
-    [mainViewController setURL:[url.description stringByReplacingOccurrencesOfString:@"app-installer://" withString:@""]];
+    [mainViewController urlSchemeInstallWithURL:[url.description stringByReplacingOccurrencesOfString:@"app-installer://" withString:@""]];
     
     return YES;
 }
+
+
 @end

@@ -14,7 +14,9 @@
     IBOutlet UITextField *URLTextField;
     IBOutlet UIButton *installButton;
 }
--(void)setURL:(NSString *)url;
+
+- (void)pasteboardInstallAction;
+- (void)urlSchemeInstallWithURL:(NSString *)url;
 
 @end
 

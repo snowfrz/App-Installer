@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.2.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
                                 <rect key="frame" x="16" y="72" width="343" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -47,7 +47,7 @@
                                             <color key="titleColor" red="0.0" green="0.68201404809999999" blue="0.93591552970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="installApp" destination="BtY-2J-ecF" eventType="touchUpInside" id="9n8-jP-i7m"/>
+                                            <action selector="installApp" destination="BtY-2J-ecF" eventType="touchUpInside" id="CGZ-b1-M1T"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -61,39 +61,40 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1wg-zZ-FJr">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1wg-zZ-FJr">
                                         <rect key="frame" x="0.0" y="41" width="343" height="33"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-WM-Cau">
-                                                <rect key="frame" x="0.0" y="0.0" width="114.5" height="33"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-WM-Cau" customClass="TwitterButtons">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Justin"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="FnZ-O0-80b"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="go7-gv-lSr"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC">
-                                                <rect key="frame" x="114.5" y="0.0" width="114" height="33"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC" customClass="TwitterButtons">
+                                                <rect key="frame" x="117" y="0.0" width="109" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="AppleBetas"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="C14-pv-DAd"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="bnI-xQ-sRl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d">
-                                                <rect key="frame" x="228.5" y="0.0" width="114.5" height="33"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d" customClass="TwitterButtons">
+                                                <rect key="frame" x="234" y="0.0" width="109" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="nullriver"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="jb1-o4-QQI"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="Tu9-iH-QWe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93254982830695732" green="0.94178299492385786" blue="0.94178299492385786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerY" secondItem="QLd-Q6-6J3" secondAttribute="centerY" id="Dec-0W-Kyi"/>
                             <constraint firstItem="Oh4-Lx-qW7" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="ESa-FV-5i0"/>
