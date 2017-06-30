@@ -146,6 +146,7 @@
 {
     // if we have an external url use that else use the text field
     external_url = external_url ? : URLTextField.text;
+    URLTextField.text = external_url;
     
     // update the UI to show were working
     [self setInstallButtonToInstalling:YES];
