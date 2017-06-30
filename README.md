@@ -17,7 +17,7 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 - ~Uploads fail because the server does not return JSON, but rather, plaintext.~ FIXED
 - ~Server does not return download link~ FIXED
 - Installation of apps creates a "scar" app on the home screen that cannot be deleted as far as I know. Similar issues arose back in the days of NoJailbreakApps and other such no-jailbreak stores. Scar app disappears eventually if you simply put it in a folder.
-- "Build Generated Issues"-type issues. Minor issues, mostly from deprecated methods used.
+- ~"Build Generated Issues"-type issues. Minor issues, mostly from deprecated methods used.~ FIXED
 - Works sometimes, but not always for some reason. No clue why.
 - Apps signed with a free developer account do not install for some reason. Please contact one of us if you install an app signed with a free developer account.
 
