@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.2.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.2.1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
                                 <rect key="frame" x="16" y="72" width="343" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -47,7 +47,7 @@
                                             <color key="titleColor" red="0.0" green="0.68201404809999999" blue="0.93591552970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="installApp" destination="BtY-2J-ecF" eventType="touchUpInside" id="CGZ-b1-M1T"/>
+                                            <action selector="installApp" destination="BtY-2J-ecF" eventType="touchUpInside" id="7m0-Ck-ivM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -55,7 +55,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-Lx-qW7">
                                 <rect key="frame" x="16" y="572.5" width="343" height="74"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -69,7 +69,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Justin"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="go7-gv-lSr"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="jRa-eG-hrZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC" customClass="TwitterButtons">
@@ -77,7 +77,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="AppleBetas"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="bnI-xQ-sRl"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="HYH-cg-rAg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d" customClass="TwitterButtons">
@@ -85,7 +85,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="nullriver"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="Tu9-iH-QWe"/>
+                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="GEF-Vh-ebc"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -111,7 +111,6 @@
                     <navigationItem key="navigationItem" title="App Installer" id="WgR-Wp-XZA"/>
                     <connections>
                         <outlet property="URLTextField" destination="P7a-CT-spm" id="khb-pv-hIb"/>
-                        <outlet property="installButton" destination="AWF-hs-AJ8" id="Uqq-sp-iHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcx-SL-lDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
