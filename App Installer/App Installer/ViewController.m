@@ -115,6 +115,10 @@
     {
         handle = [NSURL URLWithString:@"https://twitter.com/nullriver"];
     }
+    else if ([sender.titleLabel.text isEqualToString:@"CreatureSurvive"])
+    {
+        handle = [NSURL URLWithString:@"https://twitter.com/CreatureSurvive"];
+    }
     
     if (handle)
     {

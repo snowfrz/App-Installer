@@ -1,7 +1,7 @@
 # App Installer
 An iOS app designed to allow you to install other (signed) iOS apps to your device.
 
-Designed by Justin Proulx (Sn0wCh1ld), nullpixel and AppleBetas.
+Designed by Justin Proulx (Sn0wCh1ld), nullpixel, AppleBetas and CreatureSurvive.
 
 <h2>Download</h2>
 <h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.2.1/App.Installer.ipa">1.0.2.1 (.ipa)</a></h4>
@@ -19,7 +19,7 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 - Installation of apps creates a "scar" app on the home screen that cannot be deleted as far as I know. Similar issues arose back in the days of NoJailbreakApps and other such no-jailbreak stores. Scar app disappears eventually if you simply put it in a folder.
 - ~"Build Generated Issues"-type issues. Minor issues, mostly from deprecated methods used.~ FIXED
 - Works sometimes, but not always for some reason. No clue why.
-- Apps signed with a free developer account do not install for some reason. Please contact one of us if you install an app signed with a free developer account.
+- ~Apps signed with a free developer account do not install for some reason. Please contact one of us if you install an app signed with a free developer account.~ FIXED
 
 Contributions to the improvement of App Installer are greatly appreciated!
 
@@ -35,4 +35,4 @@ In addition to the terms outlined in the MIT License, you must also include a vi
 https://twitter.com/JustinAlexP/status/879551446013890561
 
 # Developers
-App Installer was mainly developed by [Justin Proulx](https://www.twitter.com/JustinAlexP), [nullpixel](https://twitter.com/nullriver) and [AppleBetas](https://twitter.com/AppleBetasDev).
+App Installer was mainly developed by [Justin Proulx](https://www.twitter.com/JustinAlexP), [nullpixel](https://twitter.com/nullriver), [AppleBetas](https://twitter.com/AppleBetasDev) and [CreatureSurvive](https://www.twitter.com/CreatureSurvive).
