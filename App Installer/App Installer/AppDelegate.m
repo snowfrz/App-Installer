@@ -18,16 +18,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    UIApplicationShortcutItem *item = [launchOptions valueForKey:UIApplicationLaunchOptionsShortcutItemKey];
-    
-    if ([item.type isEqualToString:@"com.lbastudios.App-Installer.installFromClipboard"])
-    {
-        ViewController *viewController = [[ViewController alloc] init];
-        [viewController pasteboardInstallAction ];
-    }
+    // if we launched from a shortcut, then return NO here so performActionForShortcut will take over
+    BOOL launchedFromShortcut = launchOptions[UIApplicationLaunchOptionsShortcutItemKey];
+
     
     // Override point for customization after application launch.
-    return YES;
+    return !launchedFromShortcut;
+}
+
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    
+    if ([shortcutItem.type isEqualToString:@"com.lbastudios.App-Installer.installFromClipboard"])
+    {
+        ViewController *mainViewController = self.window.rootViewController.childViewControllers.firstObject;
+        [mainViewController pasteboardInstallAction];
+    }
+    
 }
 
 
@@ -60,7 +67,7 @@
 
 
 - (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(nonnull id)annotation {
-    ViewController *mainViewController = self.window.rootViewController.childViewControllers[0];
+    ViewController *mainViewController = self.window.rootViewController.childViewControllers.firstObject;
     [mainViewController urlSchemeInstallWithURL:[url.description stringByReplacingOccurrencesOfString:@"app-installer://" withString:@""]];
     
     return YES;
