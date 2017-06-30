@@ -38,7 +38,9 @@
                                                     }
 
                                                     // return the completion
-                                                    completion(error);
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        completion(error);
+                                                    });
                                                 }];
     // make sure we start the task
     [dataTask resume];
@@ -67,7 +69,7 @@
     }
 
     // get the existing manifest as a dictionary to edit
-    NSDictionary *manifestDict = [[NSDictionary alloc] initWithContentsOfFile:documentsDirectoryPlistPath];
+    NSMutableDictionary *manifestDict = [[NSMutableDictionary alloc] initWithContentsOfFile:documentsDirectoryPlistPath];
 
     // sets the url of the manifest to the requested download link
     manifestDict[@"items"][0][@"assets"][0][@"url"] = downloadLink;

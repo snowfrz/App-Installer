@@ -20,8 +20,7 @@
 
 -(void)setHighlighted:(BOOL)highlighted {
     [UIView animateWithDuration:0.15 animations:^{
-        // be sure to cast to CGFloat here since the resulting double might not fit into CGFloat
-        self.alpha = (CGFloat) (highlighted ? 0.8 : 1);
+        self.alpha = highlighted ? 0.8f : 1.0f;
         self.transform = highlighted ? CGAffineTransformScale(CGAffineTransformIdentity, 0.95, 0.95) : CGAffineTransformIdentity;
     }];
 }
@@ -34,8 +33,7 @@
 -(void)setEnabled:(BOOL)enabled {
     [super setEnabled:enabled];
     [UIView animateWithDuration:0.15 animations:^{
-        // be sure to cast to CGFloat here since the resulting double might not fit into CGFloat
-        self.alpha = (CGFloat) (enabled ? 1 : 0.5);
+        self.alpha = enabled ? 1.0f : 0.5f;
     }];
 }
 
