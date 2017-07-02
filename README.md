@@ -17,6 +17,11 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 - ~Uploads fail because the server does not return JSON, but rather, plaintext.~ FIXED
 - ~Server does not return download link~ FIXED
 - Installation of apps creates a "scar" app on the home screen that cannot be deleted as far as I know. Similar issues arose back in the days of NoJailbreakApps and other such no-jailbreak stores. Scar app disappears eventually if you simply put it in a folder.
+  Workarounds:
+  You can get rid of scar apps by doing one of two things.
+  1. "Delete" the scar app using iOS' home screen editing mode, then put it in a folder. It will disappear eventually.
+  2. Go to Settings > General > iPhone Storage. Wait for it to load, then scroll to the bottom. You will see either "App      Installer" or "Your App", depending on what version of App Installer you have installed. It will not have an icon, and will be about 20KB (so, a lot smaller than the 200KB size of the actual App Installer app). Select it, then press "Delete App".
+
 - ~"Build Generated Issues"-type issues. Minor issues, mostly from deprecated methods used.~ FIXED
 - Works sometimes, but not always for some reason. No clue why.
 - Apps signed with a free developer account sometimes do not install for some reason. Please contact one of us if you manage to install an app signed with a free developer account.
