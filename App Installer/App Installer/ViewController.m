@@ -128,6 +128,7 @@
     }
 }
 
+
 - (void)pasteboardInstallAction
 {
     [installButton sendActionsForControlEvents:UIControlEventTouchUpInside];
@@ -144,6 +145,7 @@
 
 - (IBAction)installApp
 {
+    NSLog(@"Installing app...");
     // if we have an external url use that else use the text field
     external_url = external_url ? : URLTextField.text;
     URLTextField.text = external_url;
@@ -166,6 +168,12 @@
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
+}
+
+- (IBAction)scarButton
+{
+    NSLog(@"Fixing scars...");
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"App-prefs:root=CASTLE&path=STORAGE_AND_BACKUP"]];
 }
 
 -(void)setInstallButtonToInstalling:(BOOL)installing

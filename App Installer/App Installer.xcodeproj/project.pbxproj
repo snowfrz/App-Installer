@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925A2B001F098440002BFDFC /* ScarButton.h in Sources */ = {isa = PBXBuildFile; fileRef = 925A2AFE1F0981EA002BFDFC /* ScarButton.h */; };
+		925A2B011F098440002BFDFC /* ScarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A2AFF1F0981EA002BFDFC /* ScarButton.m */; };
 		B80B19EE1F05E9120048E629 /* AppInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = B80B19ED1F05E9120048E629 /* AppInstaller.m */; };
 		C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B543FE1F02937F000128D3 /* InstallButton.m */; };
 		D01EA8AB1EFCCD9D006FB508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8AA1EFCCD9D006FB508 /* main.m */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		925A2AFE1F0981EA002BFDFC /* ScarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScarButton.h; sourceTree = "<group>"; };
+		925A2AFF1F0981EA002BFDFC /* ScarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScarButton.m; sourceTree = "<group>"; };
 		B80B19EC1F05E9120048E629 /* AppInstaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInstaller.h; sourceTree = "<group>"; };
 		B80B19ED1F05E9120048E629 /* AppInstaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInstaller.m; sourceTree = "<group>"; };
 		C3B543FD1F02937F000128D3 /* InstallButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstallButton.h; sourceTree = "<group>"; };
@@ -157,6 +161,8 @@
 			children = (
 				C3B543FD1F02937F000128D3 /* InstallButton.h */,
 				C3B543FE1F02937F000128D3 /* InstallButton.m */,
+				925A2AFE1F0981EA002BFDFC /* ScarButton.h */,
+				925A2AFF1F0981EA002BFDFC /* ScarButton.m */,
 				D055E2101F05C00D00421536 /* TwitterButtons.h */,
 				D055E2111F05C00D00421536 /* TwitterButtons.m */,
 			);
@@ -299,6 +305,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925A2B001F098440002BFDFC /* ScarButton.h in Sources */,
+				925A2B011F098440002BFDFC /* ScarButton.m in Sources */,
 				D01EA8B11EFCCD9D006FB508 /* ViewController.m in Sources */,
 				C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */,
 				B80B19EE1F05E9120048E629 /* AppInstaller.m in Sources */,

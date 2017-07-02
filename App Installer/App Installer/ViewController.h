@@ -13,6 +13,7 @@
 {
     IBOutlet UITextField *URLTextField;
     IBOutlet UIButton *installButton;
+    IBOutlet UIButton *scarButton;
 }
 
 - (void)pasteboardInstallAction;
