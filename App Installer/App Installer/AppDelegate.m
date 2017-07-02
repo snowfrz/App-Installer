@@ -27,7 +27,8 @@
 }
 
 
-- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler
+{
     
     if ([shortcutItem.type isEqualToString:@"com.lbastudios.App-Installer.installFromClipboard"])
     {
