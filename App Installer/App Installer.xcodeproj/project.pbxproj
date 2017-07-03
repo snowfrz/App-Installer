@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		925A2B001F098440002BFDFC /* ScarButton.h in Sources */ = {isa = PBXBuildFile; fileRef = 925A2AFE1F0981EA002BFDFC /* ScarButton.h */; };
-		925A2B011F098440002BFDFC /* ScarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 925A2AFF1F0981EA002BFDFC /* ScarButton.m */; };
 		B80B19EE1F05E9120048E629 /* AppInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = B80B19ED1F05E9120048E629 /* AppInstaller.m */; };
+		C35A8BD11F09F44200E468A1 /* PaddedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C35A8BCD1F09F37C00E468A1 /* PaddedTextField.m */; };
+		C35A8BD21F09F44B00E468A1 /* TwitterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C35A8BD01F09F41C00E468A1 /* TwitterButton.m */; };
+		C35A8BD51F09F48600E468A1 /* ImpressionableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C35A8BD41F09F47A00E468A1 /* ImpressionableButton.m */; };
 		C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B543FE1F02937F000128D3 /* InstallButton.m */; };
 		D01EA8AB1EFCCD9D006FB508 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8AA1EFCCD9D006FB508 /* main.m */; };
 		D01EA8AE1EFCCD9D006FB508 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8AD1EFCCD9D006FB508 /* AppDelegate.m */; };
@@ -19,7 +20,6 @@
 		D01EA8C41EFCCD9D006FB508 /* App_InstallerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8C31EFCCD9D006FB508 /* App_InstallerTests.m */; };
 		D01EA8CF1EFCCD9D006FB508 /* App_InstallerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8CE1EFCCD9D006FB508 /* App_InstallerUITests.m */; };
 		D03166801EFCD62400E8EB77 /* general.plist in Resources */ = {isa = PBXBuildFile; fileRef = D031667F1EFCD62400E8EB77 /* general.plist */; };
-		D055E2121F05C00D00421536 /* TwitterButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = D055E2111F05C00D00421536 /* TwitterButtons.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		925A2AFE1F0981EA002BFDFC /* ScarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScarButton.h; sourceTree = "<group>"; };
-		925A2AFF1F0981EA002BFDFC /* ScarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScarButton.m; sourceTree = "<group>"; };
 		B80B19EC1F05E9120048E629 /* AppInstaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInstaller.h; sourceTree = "<group>"; };
 		B80B19ED1F05E9120048E629 /* AppInstaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInstaller.m; sourceTree = "<group>"; };
+		C35A8BCD1F09F37C00E468A1 /* PaddedTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaddedTextField.m; sourceTree = "<group>"; };
+		C35A8BCE1F09F37C00E468A1 /* PaddedTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaddedTextField.h; sourceTree = "<group>"; };
+		C35A8BCF1F09F41C00E468A1 /* TwitterButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterButton.h; sourceTree = "<group>"; };
+		C35A8BD01F09F41C00E468A1 /* TwitterButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterButton.m; sourceTree = "<group>"; };
+		C35A8BD31F09F47A00E468A1 /* ImpressionableButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImpressionableButton.h; sourceTree = "<group>"; };
+		C35A8BD41F09F47A00E468A1 /* ImpressionableButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpressionableButton.m; sourceTree = "<group>"; };
 		C3B543FD1F02937F000128D3 /* InstallButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstallButton.h; sourceTree = "<group>"; };
 		C3B543FE1F02937F000128D3 /* InstallButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstallButton.m; sourceTree = "<group>"; };
 		D01EA8A61EFCCD9D006FB508 /* App Installer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Installer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,8 +66,6 @@
 		D01EA8CE1EFCCD9D006FB508 /* App_InstallerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_InstallerUITests.m; sourceTree = "<group>"; };
 		D01EA8D01EFCCD9D006FB508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D031667F1EFCD62400E8EB77 /* general.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = general.plist; sourceTree = "<group>"; };
-		D055E2101F05C00D00421536 /* TwitterButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterButtons.h; sourceTree = "<group>"; };
-		D055E2111F05C00D00421536 /* TwitterButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterButtons.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,7 @@
 				D01EA8B51EFCCD9D006FB508 /* Assets.xcassets */,
 				D01EA8BA1EFCCD9D006FB508 /* Info.plist */,
 				D01EA8A91EFCCD9D006FB508 /* Supporting Files */,
-				D055E2131F05C01400421536 /* Button classes */,
+				D055E2131F05C01400421536 /* View subclasses */,
 			);
 			path = "App Installer";
 			sourceTree = "<group>";
@@ -156,17 +158,19 @@
 			path = "App InstallerUITests";
 			sourceTree = "<group>";
 		};
-		D055E2131F05C01400421536 /* Button classes */ = {
+		D055E2131F05C01400421536 /* View subclasses */ = {
 			isa = PBXGroup;
 			children = (
 				C3B543FD1F02937F000128D3 /* InstallButton.h */,
 				C3B543FE1F02937F000128D3 /* InstallButton.m */,
-				925A2AFE1F0981EA002BFDFC /* ScarButton.h */,
-				925A2AFF1F0981EA002BFDFC /* ScarButton.m */,
-				D055E2101F05C00D00421536 /* TwitterButtons.h */,
-				D055E2111F05C00D00421536 /* TwitterButtons.m */,
+				C35A8BCF1F09F41C00E468A1 /* TwitterButton.h */,
+				C35A8BD01F09F41C00E468A1 /* TwitterButton.m */,
+				C35A8BD31F09F47A00E468A1 /* ImpressionableButton.h */,
+				C35A8BD41F09F47A00E468A1 /* ImpressionableButton.m */,
+				C35A8BCE1F09F37C00E468A1 /* PaddedTextField.h */,
+				C35A8BCD1F09F37C00E468A1 /* PaddedTextField.m */,
 			);
-			name = "Button classes";
+			name = "View subclasses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,14 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925A2B001F098440002BFDFC /* ScarButton.h in Sources */,
-				925A2B011F098440002BFDFC /* ScarButton.m in Sources */,
 				D01EA8B11EFCCD9D006FB508 /* ViewController.m in Sources */,
 				C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */,
+				C35A8BD51F09F48600E468A1 /* ImpressionableButton.m in Sources */,
 				B80B19EE1F05E9120048E629 /* AppInstaller.m in Sources */,
+				C35A8BD21F09F44B00E468A1 /* TwitterButton.m in Sources */,
 				D01EA8AE1EFCCD9D006FB508 /* AppDelegate.m in Sources */,
-				D055E2121F05C00D00421536 /* TwitterButtons.m in Sources */,
 				D01EA8AB1EFCCD9D006FB508 /* main.m in Sources */,
+				C35A8BD11F09F44200E468A1 /* PaddedTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
