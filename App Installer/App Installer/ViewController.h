@@ -15,6 +15,7 @@
     IBOutlet UIButton *installButton;
     IBOutlet UIButton *scarButton;
     
+    IBOutlet UITextView *instructionsTextView;
     IBOutlet UILabel *versionLabel;
 }
 

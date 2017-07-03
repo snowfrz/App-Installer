@@ -33,6 +33,11 @@
     installer = [AppInstaller new];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [instructionsTextView setContentOffset:CGPointZero animated:NO];
+}
+
 -(BOOL)shouldEnableInstallButton
 {
     if([URLTextField.text isEqualToString:@""]) return NO;
