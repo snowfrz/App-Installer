@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad
 {
+    versionLabel.text = [@"v" stringByAppendingString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    
     [self checkForUpdates];
     
     [super viewDidLoad];
