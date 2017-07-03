@@ -22,20 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.3.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
-                                <rect key="frame" x="16" y="72" width="343" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-N1-Do0">
                                 <rect key="frame" x="16" y="293.5" width="343" height="80"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direct URL to .ipa file" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P7a-CT-spm">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direct URL to .ipa file" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P7a-CT-spm" customClass="PaddedTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="343" id="Ycw-x4-ppn"/>
-                                            <constraint firstAttribute="height" constant="30" id="b9c-dj-dHa"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -54,34 +47,35 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-Lx-qW7">
-                                <rect key="frame" x="16" y="490.5" width="343" height="156"/>
+                                <rect key="frame" x="0.0" y="490.5" width="0.0" height="156"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdN-HP-feL">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
                                         <state key="normal" title="Delete Scar App"/>
                                         <connections>
                                             <segue destination="D6Z-ek-fh9" kind="show" id="So2-cR-SGX"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
-                                        <rect key="frame" x="0.0" y="41" width="343" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="41" width="0.0" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact" hidden="YES"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1wg-zZ-FJr">
-                                        <rect key="frame" x="0.0" y="82" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="82" width="0.0" height="33"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-WM-Cau" customClass="TwitterButtons">
-                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="33"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-WM-Cau" customClass="TwitterButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Justin"/>
                                                 <connections>
                                                     <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="Dhh-jJ-Yv0"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC" customClass="TwitterButtons">
-                                                <rect key="frame" x="175.5" y="0.0" width="167.5" height="33"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC" customClass="TwitterButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="AppleBetas"/>
                                                 <connections>
@@ -90,20 +84,21 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <variation key="heightClass=compact" hidden="YES"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8OC-Hx-HyK">
-                                        <rect key="frame" x="0.0" y="123" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="123" width="0.0" height="33"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d" customClass="TwitterButtons">
-                                                <rect key="frame" x="0.0" y="0.0" width="167.5" height="33"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d" customClass="TwitterButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="nullriver"/>
                                                 <connections>
                                                     <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="cNQ-QC-noh"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq0-1y-SV0" userLabel="CreatureSurvive" customClass="TwitterButtons">
-                                                <rect key="frame" x="175.5" y="0.0" width="167.5" height="33"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq0-1y-SV0" userLabel="CreatureSurvive" customClass="TwitterButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="CreatureSurvive"/>
                                                 <connections>
@@ -111,21 +106,29 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <variation key="heightClass=compact" hidden="YES"/>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w3-bP-0WE">
+                                        <rect key="frame" x="0.0" y="77.5" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="320" id="Nbt-ka-YCc"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.93254982830695732" green="0.94178299492385786" blue="0.94178299492385786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Oh4-Lx-qW7" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="7Js-6c-pFD"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerY" secondItem="QLd-Q6-6J3" secondAttribute="centerY" id="Dec-0W-Kyi"/>
-                            <constraint firstItem="Oh4-Lx-qW7" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="ESa-FV-5i0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Oh4-Lx-qW7" secondAttribute="trailing" id="IYp-Cj-hcl"/>
-                            <constraint firstItem="VjA-8r-tau" firstAttribute="top" secondItem="Oh4-Lx-qW7" secondAttribute="bottom" constant="20" id="O0I-Na-Ec1"/>
+                            <constraint firstItem="Oh4-Lx-qW7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="ESa-FV-5i0"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Oh4-Lx-qW7" secondAttribute="trailing" id="IYp-Cj-hcl"/>
+                            <constraint firstItem="VjA-8r-tau" firstAttribute="top" secondItem="Oh4-Lx-qW7" secondAttribute="bottom" constant="4" id="O0I-Na-Ec1"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="trailing" secondItem="QLd-Q6-6J3" secondAttribute="trailingMargin" id="RV9-2e-v85"/>
-                            <constraint firstItem="jL1-mA-KXy" firstAttribute="top" secondItem="Sb3-pW-Maw" secondAttribute="bottom" constant="8" id="Rzz-b0-H3y"/>
-                            <constraint firstItem="jL1-mA-KXy" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="UgQ-WJ-In1"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="jHR-N7-aM0"/>
-                            <constraint firstItem="jL1-mA-KXy" firstAttribute="trailing" secondItem="QLd-Q6-6J3" secondAttribute="trailingMargin" id="jyG-un-Zfa"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="yYl-0Y-oNc"/>
                         </constraints>
                     </view>
@@ -151,7 +154,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhL-FA-zNf" customClass="ScarButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhL-FA-zNf" customClass="InstallButton">
                                 <rect key="frame" x="16" y="617" width="343" height="30"/>
                                 <color key="tintColor" red="0.93871170280000005" green="0.3775111437" blue="0.25757423039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Go to Settings"/>
@@ -163,7 +166,7 @@
                                 <rect key="frame" x="16" y="72" width="343" height="537"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">When you install an app using App Installer, there may be an app on your homescreen, with a grey icon, called "Your App", that you can't delete. To delete it, complete the following steps.
+                                        <mutableString key="content">When you install an app using App Installer, there may be an app on your Home Screen, with a grey icon, called "Your App", that you can't delete. To delete it, complete the following steps.
 
 1. Press the "Go to Settings" button at the bottom of the page. 
 
@@ -173,10 +176,10 @@ At this time, the button does not work on iOS 11, so if you are using iOS 11, op
 
 3. Find "Your App" in the list of apps. It will have a grey icon, and should be around 20KB in size.
 
-4. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.</string>
+4. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.</mutableString>
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="14"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>

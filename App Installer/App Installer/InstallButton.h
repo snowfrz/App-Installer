@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImpressionableButton.h"
 
-@interface InstallButton : UIButton
+@interface InstallButton : ImpressionableButton
 
 @end
