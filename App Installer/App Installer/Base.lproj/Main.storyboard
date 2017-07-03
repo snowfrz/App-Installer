@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.3.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
                                 <rect key="frame" x="16" y="72" width="343" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -159,12 +159,11 @@
                                     <action selector="scarButton" destination="D6Z-ek-fh9" eventType="touchUpInside" id="dIv-5w-7Ec"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0d-e2-sE7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0d-e2-sE7">
                                 <rect key="frame" x="16" y="72" width="343" height="537"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">When you install an app using App Installer, there may be an app, with a grey icon, called either "Your App", that you can't delete, on your homescreen. To delete them, complete the following steps.
+                                        <string key="content">When you install an app using App Installer, there may be an app on your homescreen, with a grey icon, called "Your App", that you can't delete. To delete it, complete the following steps.
 
 1. Press the "Go to Settings" button at the bottom of the page. 
 
@@ -174,7 +173,7 @@ At this time, the button does not work on iOS 11, so if you are using iOS 11, op
 
 3. Find "Your App" in the list of apps. It will have a grey icon, and should be around 20KB in size.
 
-4. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.</mutableString>
+4. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.</string>
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -189,6 +188,10 @@ At this time, the button does not work on iOS 11, so if you are using iOS 11, op
                             <constraint firstItem="PhL-FA-zNf" firstAttribute="leading" secondItem="ngd-19-IvA" secondAttribute="leadingMargin" id="3W5-hN-f3a"/>
                             <constraint firstItem="PuA-UF-a7E" firstAttribute="top" secondItem="PhL-FA-zNf" secondAttribute="bottom" constant="20" id="3b9-xk-4d3"/>
                             <constraint firstItem="PhL-FA-zNf" firstAttribute="trailing" secondItem="ngd-19-IvA" secondAttribute="trailingMargin" id="F6u-QN-wUw"/>
+                            <constraint firstItem="PhL-FA-zNf" firstAttribute="top" secondItem="E0d-e2-sE7" secondAttribute="bottom" constant="8" id="a1Z-2X-t2F"/>
+                            <constraint firstItem="E0d-e2-sE7" firstAttribute="top" secondItem="e2X-k5-t3j" secondAttribute="bottom" constant="8" id="ftF-I5-1Gc"/>
+                            <constraint firstItem="E0d-e2-sE7" firstAttribute="leading" secondItem="ngd-19-IvA" secondAttribute="leadingMargin" id="j0t-hV-xyX"/>
+                            <constraint firstItem="E0d-e2-sE7" firstAttribute="trailing" secondItem="ngd-19-IvA" secondAttribute="trailingMargin" id="lzE-t9-0Rk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Scar Cleanup" id="RYo-vv-Tth"/>
