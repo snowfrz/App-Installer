@@ -4,6 +4,7 @@ An iOS app designed to allow you to install other (signed) iOS apps to your devi
 Designed by Justin Proulx (Sn0wCh1ld), nullpixel, AppleBetas and CreatureSurvive.
 
 <h2>Download</h2>
+<h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.3.0/App.Installer.ipa">1.0.3.0 (.ipa)</a></h4>
 <h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.2.1/App.Installer.ipa">1.0.2.1 (.ipa)</a></h4>
 <strike><h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.2.0/App.Installer.ipa">1.0.2.0 (.ipa)</a></h4></strike>
 <h4><a href="https://github.com/Sn0wCh1ld/App-Installer/releases/download/1.0.1/App.Installer.ipa">1.0.1 (.ipa)</a></h4>
@@ -16,7 +17,7 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 - ~Cannot install any apps because of SSL requirement for itms-services installations~ FIXED
 - ~Uploads fail because the server does not return JSON, but rather, plaintext.~ FIXED
 - ~Server does not return download link~ FIXED
-- Installation of apps creates a "scar" app on the home screen that cannot be deleted as far as I know. Similar issues arose back in the days of NoJailbreakApps and other such no-jailbreak stores. Scar app disappears eventually if you simply put it in a folder.
+- ~Installation of apps creates a "scar" app on the home screen that cannot be deleted as far as I know. Similar issues arose back in the days of NoJailbreakApps and other such no-jailbreak stores. Scar app disappears eventually if you simply put it in a folder.~ NOT FIXED, BUT AN OFFICIAL WORKAROUND IS INCLUDED IN THE APP. WE WILL CONTINUE WORKING TO FULLY FIX IT.
   Workarounds:
   You can get rid of scar apps by doing one of two things.
   1. "Delete" the scar app using iOS' home screen editing mode, then put it in a folder. It will disappear eventually.
