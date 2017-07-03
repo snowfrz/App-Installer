@@ -106,6 +106,8 @@
 - (void)downloadAppWithManifestURL:(NSString *)downloadLink
 {
 //    NSLog(@"path: %@", downloadLink);
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"itms-services://?action=download-manifest&url=" stringByAppendingString:downloadLink]]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"itms-services://?action=download-manifest&url=" stringByAppendingString:downloadLink]]];
+    });
 }
 @end
