@@ -132,6 +132,7 @@
                     <connections>
                         <outlet property="URLTextField" destination="P7a-CT-spm" id="khb-pv-hIb"/>
                         <outlet property="installButton" destination="AWF-hs-AJ8" id="HPv-D9-mkt"/>
+                        <outlet property="versionLabel" destination="8w3-bP-0WE" id="f7G-ms-qu4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcx-SL-lDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
