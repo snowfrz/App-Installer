@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOW-is-eq7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOW-is-eq7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,14 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.2.2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jL1-mA-KXy">
                                 <rect key="frame" x="16" y="72" width="343" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-N1-Do0">
-                                <rect key="frame" x="16" y="268.5" width="343" height="130"/>
+                                <rect key="frame" x="16" y="293.5" width="343" height="80"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direct URL to .ipa file" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P7a-CT-spm">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -51,29 +51,26 @@
                                             <action selector="installApp" destination="BtY-2J-ecF" eventType="touchUpInside" id="Zox-kb-BFR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHN-cZ-Klx" customClass="ScarButton">
-                                        <rect key="frame" x="120.5" y="96" width="102" height="34"/>
-                                        <color key="tintColor" red="0.0" green="0.68201404809999999" blue="0.93591552970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Scar App Fix">
-                                            <color key="titleColor" red="0.0" green="0.68201404809999999" blue="0.93591552970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="scarButton" destination="BtY-2J-ecF" eventType="touchUpInside" id="s8c-Ie-SAs"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-Lx-qW7">
-                                <rect key="frame" x="16" y="531.5" width="343" height="115"/>
+                                <rect key="frame" x="16" y="490.5" width="343" height="156"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdN-HP-feL">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
+                                        <state key="normal" title="Delete Scar App"/>
+                                        <connections>
+                                            <segue destination="D6Z-ek-fh9" kind="show" id="So2-cR-SGX"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
+                                        <rect key="frame" x="0.0" y="41" width="343" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1wg-zZ-FJr">
-                                        <rect key="frame" x="0.0" y="41" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="82" width="343" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-WM-Cau" customClass="TwitterButtons">
                                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="33"/>
@@ -95,7 +92,7 @@
                                         <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8OC-Hx-HyK">
-                                        <rect key="frame" x="0.0" y="82" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="123" width="343" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d" customClass="TwitterButtons">
                                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="33"/>
@@ -136,12 +133,69 @@
                     <connections>
                         <outlet property="URLTextField" destination="P7a-CT-spm" id="khb-pv-hIb"/>
                         <outlet property="installButton" destination="AWF-hs-AJ8" id="HPv-D9-mkt"/>
-                        <outlet property="scarButton" destination="KHN-cZ-Klx" id="hxb-bl-kJF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcx-SL-lDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="636" y="67.916041979010501"/>
+        </scene>
+        <!--Scar Cleanup-->
+        <scene sceneID="s5S-yB-QcV">
+            <objects>
+                <viewController id="D6Z-ek-fh9" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e2X-k5-t3j"/>
+                        <viewControllerLayoutGuide type="bottom" id="PuA-UF-a7E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ngd-19-IvA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhL-FA-zNf" customClass="ScarButton">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <color key="tintColor" red="0.93871170280000005" green="0.3775111437" blue="0.25757423039999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Go to Settings"/>
+                                <connections>
+                                    <action selector="scarButton" destination="D6Z-ek-fh9" eventType="touchUpInside" id="dIv-5w-7Ec"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0d-e2-sE7">
+                                <rect key="frame" x="16" y="72" width="343" height="537"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">When you install an app using App Installer, there may be an app, with a grey icon, called either "Your App", that you can't delete, on your homescreen. To delete them, complete the following steps.
+
+1. Press the "Go to Settings" button at the bottom of the page. 
+
+At this time, the button does not work on iOS 11, so if you are using iOS 11, open the Settings app, and navigate to Settings &gt; General &gt; iPhone Storage.
+
+2. On iOS 10, select "Manage Storage". iOS 11 users can skip this step.
+
+3. Find "Your App" in the list of apps. It will have a grey icon, and should be around 20KB in size.
+
+4. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93302184343338013" green="0.94126671552658081" blue="0.94115597009658813" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PhL-FA-zNf" firstAttribute="leading" secondItem="ngd-19-IvA" secondAttribute="leadingMargin" id="3W5-hN-f3a"/>
+                            <constraint firstItem="PuA-UF-a7E" firstAttribute="top" secondItem="PhL-FA-zNf" secondAttribute="bottom" constant="20" id="3b9-xk-4d3"/>
+                            <constraint firstItem="PhL-FA-zNf" firstAttribute="trailing" secondItem="ngd-19-IvA" secondAttribute="trailingMargin" id="F6u-QN-wUw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scar Cleanup" id="RYo-vv-Tth"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdz-rK-gdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1341.5999999999999" y="67.916041979010501"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="no6-5K-Lcw">
