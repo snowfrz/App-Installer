@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <SafariServices/SafariServices.h>
 
-@interface ViewController : UIViewController <UITextFieldDelegate, SFSafariViewControllerDelegate>
+@interface ViewController : UIViewController <UITextFieldDelegate>
 {
     IBOutlet UITextField *URLTextField;
     IBOutlet UIButton *installButton;
