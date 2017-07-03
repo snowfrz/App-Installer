@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOW-is-eq7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOW-is-eq7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,27 +46,26 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-Lx-qW7">
-                                <rect key="frame" x="0.0" y="490.5" width="0.0" height="156"/>
+                                <rect key="frame" x="27.5" y="466" width="320" height="197"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdN-HP-feL">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
                                         <state key="normal" title="Delete Scar App"/>
                                         <connections>
                                             <segue destination="D6Z-ek-fh9" kind="show" id="So2-cR-SGX"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
-                                        <rect key="frame" x="0.0" y="41" width="0.0" height="33"/>
+                                        <rect key="frame" x="0.0" y="41" width="320" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact" hidden="YES"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1wg-zZ-FJr">
-                                        <rect key="frame" x="0.0" y="82" width="0.0" height="33"/>
+                                        <rect key="frame" x="0.0" y="82" width="320" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-WM-Cau" customClass="TwitterButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Justin"/>
                                                 <connections>
@@ -75,7 +73,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC" customClass="TwitterButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
+                                                <rect key="frame" x="164" y="0.0" width="156" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="AppleBetas"/>
                                                 <connections>
@@ -84,13 +82,12 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <variation key="heightClass=compact" hidden="YES"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8OC-Hx-HyK">
-                                        <rect key="frame" x="0.0" y="123" width="0.0" height="33"/>
+                                        <rect key="frame" x="0.0" y="123" width="320" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d" customClass="TwitterButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="nullriver"/>
                                                 <connections>
@@ -98,7 +95,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq0-1y-SV0" userLabel="CreatureSurvive" customClass="TwitterButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="33"/>
+                                                <rect key="frame" x="164" y="0.0" width="156" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="CreatureSurvive"/>
                                                 <connections>
@@ -106,10 +103,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <variation key="heightClass=compact" hidden="YES"/>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.0.3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w3-bP-0WE">
-                                        <rect key="frame" x="0.0" y="77.5" width="0.0" height="0.0"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[version]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w3-bP-0WE">
+                                        <rect key="frame" x="0.0" y="164" width="320" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -166,7 +162,7 @@
                                 <rect key="frame" x="16" y="72" width="343" height="537"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">When you install an app using App Installer, there may be an app on your Home Screen, with a grey icon, called "Your App", that you can't delete. To delete it, complete the following steps.
+                                        <string key="content">When you install an app using App Installer, there may be an app on your Home Screen, with a grey icon, called "Your App", that you can't delete. To delete it, complete the following steps.
 
 1. Press the "Go to Settings" button at the bottom of the page. 
 
@@ -176,7 +172,7 @@ At this time, the button does not work on iOS 11, so if you are using iOS 11, op
 
 3. Find "Your App" in the list of apps. It will have a grey icon, and should be around 20KB in size.
 
-4. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.</mutableString>
+4. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.</string>
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
