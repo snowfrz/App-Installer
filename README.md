@@ -18,6 +18,7 @@ If for some reason, you cannot access the App Store, but have access to the .ipa
 - ~Uploads fail because the server does not return JSON, but rather, plaintext.~ FIXED
 - ~Server does not return download link~ FIXED
 - ~Installation of apps creates a "scar" app on the home screen that cannot be deleted as far as I know. Similar issues arose back in the days of NoJailbreakApps and other such no-jailbreak stores. Scar app disappears eventually if you simply put it in a folder.~ NOT FIXED, BUT AN OFFICIAL WORKAROUND IS INCLUDED IN THE APP. WE WILL CONTINUE WORKING TO FULLY FIX IT.
+  
   Workarounds:
   You can get rid of scar apps by doing one of two things.
   1. "Delete" the scar app using iOS' home screen editing mode, then put it in a folder. It will disappear eventually.
