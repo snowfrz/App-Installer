@@ -180,7 +180,7 @@
 - (IBAction)scarButton
 {
     NSLog(@"Fixing scars...");
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"App-prefs:root=General&path=STORAGE_ICLOUD_USAGE"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"App-prefs:root=General&path=STORAGE_ICLOUD_USAGE/DEVICE_USAGE"]];
 }
 
 -(void)setInstallButtonToInstalling:(BOOL)installing
