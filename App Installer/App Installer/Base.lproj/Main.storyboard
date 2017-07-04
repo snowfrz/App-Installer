@@ -163,19 +163,17 @@
                                 <rect key="frame" x="16" y="72" width="343" height="537"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <mutableString key="content">When you install an app using App Installer, there may be an app on your Home Screen, with a grey icon, called "Your App", that you can't delete. To delete it, complete the following steps.
+                                        <string key="content">When you install an app using App Installer, there may be an app on your Home Screen, with a grey icon, called "Your App", that you can't delete. To delete it, complete the following steps.
 
 1. Press the "Go to Settings" button at the bottom of the page. 
 
 At this time, the button does not work on iOS 11, so if you are using iOS 11, open the Settings app, and navigate to Settings &gt; General &gt; iPhone Storage.
 
-2. On iOS 10, select "Manage Storage". iOS 11 users can skip this step.
+2. Find "Your App" in the list of apps. It will have a grey icon, and should be around 16KB in size.
 
-3. Find "Your App" in the list of apps. It will have a grey icon, and should be around 20KB in size.
+3. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.
 
-4. Once you've found the app, select its listing and press "Delete App" at the bottom of its page.
-
-NOTE: If the "Delete App" is missing, check your home screen as the scar app may have already disappeared on its own.</mutableString>
+NOTE: If the "Delete App" is missing, check your home screen as the scar app may have already disappeared on its own.</string>
                                         <attributes>
                                             <font key="NSFont" metaFont="system" size="14"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="2" tighteningFactorForTruncation="0.0"/>
