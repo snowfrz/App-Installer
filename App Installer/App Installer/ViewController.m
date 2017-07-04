@@ -99,12 +99,6 @@
     installButton.enabled = [self shouldEnableInstallButton];
 }
 
-#pragma mark - SFSafariViewController delegate methods
-- (void)safariViewController:(SFSafariViewController *)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully {
-}
-
-- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
-}
 
 #pragma mark – Interface Actions
 
@@ -130,7 +124,6 @@
     if (handle)
     {
         SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL:handle entersReaderIfAvailable:NO];
-        safari.delegate = self;
         [self presentViewController:safari animated:YES completion:nil];
     }
 }
@@ -180,7 +173,7 @@
 - (IBAction)scarButton
 {
     NSLog(@"Fixing scars...");
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"App-prefs:root=General&path=STORAGE_ICLOUD_USAGE"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"App-prefs:root=General&path=STORAGE_ICLOUD_USAGE/DEVICE_USAGE"]];
 }
 
 -(void)setInstallButtonToInstalling:(BOOL)installing
