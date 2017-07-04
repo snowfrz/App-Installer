@@ -102,23 +102,55 @@
 
 #pragma mark – Interface Actions
 
-- (IBAction)openTwiter:(UIButton *)sender {
+- (IBAction)openTwitter:(UIButton *)sender
+{
     NSURL *handle;
     if ([sender.titleLabel.text isEqualToString:@"Justin"])
     {
-        handle = [NSURL URLWithString:@"https://twitter.com/JustinAlexP"];
+        //twitter://user?screen_name=SCREEN_NAME
+        
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]])
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=JustinAlexP"]];
+        }
+        else
+        {
+           handle = [NSURL URLWithString:@"https://twitter.com/JustinAlexP"];
+        }
+        
     }
     else if ([sender.titleLabel.text isEqualToString:@"AppleBetas"])
     {
-        handle = [NSURL URLWithString:@"https://twitter.com/AppleBetasDev"];
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]])
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=AppleBetasDev"]];
+        }
+        else
+        {
+            handle = [NSURL URLWithString:@"https://twitter.com/AppleBetasDev"];
+        }
     }
     else if ([sender.titleLabel.text isEqualToString:@"nullriver"])
     {
-        handle = [NSURL URLWithString:@"https://twitter.com/nullriver"];
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]])
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=nullriver"]];
+        }
+        else
+        {
+            handle = [NSURL URLWithString:@"https://twitter.com/nullriver"];
+        }
     }
     else if ([sender.titleLabel.text isEqualToString:@"CreatureSurvive"])
     {
-        handle = [NSURL URLWithString:@"https://twitter.com/CreatureSurvive"];
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]])
+        {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=CreatureSurvive"]];
+        }
+        else
+        {
+            handle = [NSURL URLWithString:@"https://twitter.com/CreatureSurvive"];
+        }
     }
     
     if (handle)

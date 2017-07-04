@@ -12,15 +12,18 @@
 
 @implementation PaddedTextField
 
--(CGRect)textRectForBounds:(CGRect)bounds {
+-(CGRect)textRectForBounds:(CGRect)bounds
+{
     return UIEdgeInsetsInsetRect(bounds, kPaddedTextFieldInsets);
 }
 
--(CGRect)placeholderRectForBounds:(CGRect)bounds {
+-(CGRect)placeholderRectForBounds:(CGRect)bounds
+{
     return UIEdgeInsetsInsetRect(bounds, kPaddedTextFieldInsets);
 }
 
--(CGRect)editingRectForBounds:(CGRect)bounds {
+-(CGRect)editingRectForBounds:(CGRect)bounds
+{
     return UIEdgeInsetsInsetRect(bounds, kPaddedTextFieldInsets);
 }
 

@@ -69,7 +69,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="Justin"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="Dhh-jJ-Yv0"/>
+                                                    <action selector="openTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="pCS-Fl-okz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcZ-G4-XfC" customClass="TwitterButton">
@@ -77,7 +77,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="AppleBetas"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="GV1-vx-DTY"/>
+                                                    <action selector="openTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="5gm-z3-Auo"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -91,7 +91,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="nullriver"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="cNQ-QC-noh"/>
+                                                    <action selector="openTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="CyG-30-tfW"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq0-1y-SV0" userLabel="CreatureSurvive" customClass="TwitterButton">
@@ -99,7 +99,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="CreatureSurvive"/>
                                                 <connections>
-                                                    <action selector="openTwiter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="7dO-cd-wGk"/>
+                                                    <action selector="openTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="wmU-GP-mhC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
