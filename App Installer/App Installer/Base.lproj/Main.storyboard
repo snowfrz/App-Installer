@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-N1-Do0">
-                                <rect key="frame" x="16" y="293.5" width="343" height="80"/>
+                                <rect key="frame" x="16" y="294" width="343" height="80"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direct URL to .ipa file" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P7a-CT-spm" customClass="PaddedTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -46,23 +46,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-Lx-qW7">
-                                <rect key="frame" x="27.5" y="466" width="320" height="197"/>
+                                <rect key="frame" x="27.5" y="507" width="320" height="156"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdN-HP-feL">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
-                                        <state key="normal" title="Delete Scar App"/>
-                                        <connections>
-                                            <segue destination="D6Z-ek-fh9" kind="show" id="So2-cR-SGX"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
-                                        <rect key="frame" x="0.0" y="41" width="320" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1wg-zZ-FJr">
-                                        <rect key="frame" x="0.0" y="82" width="320" height="33"/>
+                                        <rect key="frame" x="0.0" y="41" width="320" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-WM-Cau" customClass="TwitterButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="156" height="33"/>
@@ -84,7 +77,7 @@
                                         <color key="backgroundColor" red="0.99019607843137258" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8OC-Hx-HyK">
-                                        <rect key="frame" x="0.0" y="123" width="320" height="33"/>
+                                        <rect key="frame" x="0.0" y="82" width="320" height="33"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQ4-dP-K9d" customClass="TwitterButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="156" height="33"/>
@@ -105,7 +98,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[version]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w3-bP-0WE">
-                                        <rect key="frame" x="0.0" y="164" width="320" height="33"/>
+                                        <rect key="frame" x="0.0" y="123" width="320" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -128,7 +121,13 @@
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="yYl-0Y-oNc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="App Installer" id="WgR-Wp-XZA"/>
+                    <navigationItem key="navigationItem" title="App Installer" id="WgR-Wp-XZA">
+                        <barButtonItem key="rightBarButtonItem" title="Cleanup" id="3Vk-VX-yvm">
+                            <connections>
+                                <segue destination="D6Z-ek-fh9" kind="show" id="5PA-Gf-vcf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="URLTextField" destination="P7a-CT-spm" id="khb-pv-hIb"/>
                         <outlet property="installButton" destination="AWF-hs-AJ8" id="HPv-D9-mkt"/>
@@ -139,7 +138,7 @@
             </objects>
             <point key="canvasLocation" x="636" y="67.916041979010501"/>
         </scene>
-        <!--Scar Cleanup-->
+        <!--Scar App Cleanup-->
         <scene sceneID="s5S-yB-QcV">
             <objects>
                 <viewController id="D6Z-ek-fh9" customClass="ViewController" sceneMemberID="viewController">
@@ -194,14 +193,14 @@ NOTE: If the "Delete App" is missing, check your home screen as the scar app may
                             <constraint firstItem="E0d-e2-sE7" firstAttribute="trailing" secondItem="ngd-19-IvA" secondAttribute="trailingMargin" id="lzE-t9-0Rk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Scar Cleanup" id="RYo-vv-Tth"/>
+                    <navigationItem key="navigationItem" title="Scar App Cleanup" id="RYo-vv-Tth"/>
                     <connections>
                         <outlet property="instructionsTextView" destination="E0d-e2-sE7" id="obo-20-FjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdz-rK-gdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341.5999999999999" y="67.916041979010501"/>
+            <point key="canvasLocation" x="1588" y="68"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="no6-5K-Lcw">
