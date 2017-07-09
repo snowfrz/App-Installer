@@ -18,6 +18,11 @@
 
 @implementation ViewController
 
+- (IBAction)done:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad
 {
     versionLabel.text = [@"v" stringByAppendingString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];

@@ -46,7 +46,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-Lx-qW7">
-                                <rect key="frame" x="27.5" y="507" width="320" height="156"/>
+                                <rect key="frame" x="28" y="507" width="320" height="156"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
@@ -124,7 +124,7 @@
                     <navigationItem key="navigationItem" title="App Installer" id="WgR-Wp-XZA">
                         <barButtonItem key="rightBarButtonItem" title="Cleanup" id="3Vk-VX-yvm">
                             <connections>
-                                <segue destination="D6Z-ek-fh9" kind="show" id="5PA-Gf-vcf"/>
+                                <segue destination="ewx-Z2-SOE" kind="presentation" id="Rsr-1P-Fuy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -193,14 +193,36 @@ NOTE: If the "Delete App" is missing, check your home screen as the scar app may
                             <constraint firstItem="E0d-e2-sE7" firstAttribute="trailing" secondItem="ngd-19-IvA" secondAttribute="trailingMargin" id="lzE-t9-0Rk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Scar App Cleanup" id="RYo-vv-Tth"/>
+                    <navigationItem key="navigationItem" title="Scar App Cleanup" id="RYo-vv-Tth">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ph2-12-w8W">
+                            <connections>
+                                <action selector="done:" destination="D6Z-ek-fh9" id="391-0r-j97"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="instructionsTextView" destination="E0d-e2-sE7" id="obo-20-FjP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdz-rK-gdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="68"/>
+            <point key="canvasLocation" x="2569" y="68"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jMB-bU-n8y">
+            <objects>
+                <navigationController id="ewx-Z2-SOE" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rZv-ao-2xg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="D6Z-ek-fh9" kind="relationship" relationship="rootViewController" id="IuC-gu-yAN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOy-t6-1b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="68"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="no6-5K-Lcw">
