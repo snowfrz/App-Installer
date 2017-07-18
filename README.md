@@ -1,3 +1,5 @@
+Notice: I (Justin) am usually the one to provide App Installer support via Twitter. However, between and including July 19th and 29th, I will be unavailable. During these dates, your questions should be asked to [AppleBetas](https://twitter.com/AppleBetasDev), also via [Twitter](https://twitter.com/AppleBetasDev).
+
 # App Installer
 An iOS app designed to allow you to install other (signed) iOS apps to your device.
 
