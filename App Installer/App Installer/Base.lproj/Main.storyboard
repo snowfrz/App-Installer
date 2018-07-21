@@ -108,8 +108,11 @@
                                     <constraint firstAttribute="width" priority="999" constant="320" id="Nbt-ka-YCc"/>
                                 </constraints>
                             </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Stv-9S-99Z">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2.5"/>
+                            </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D68-Xn-Mdv">
-                                <rect key="frame" x="158" y="439.5" width="59.5" height="59.5"/>
+                                <rect key="frame" x="158" y="72" width="59.5" height="59.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-sign" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzS-J0-0go">
                                         <rect key="frame" x="0.0" y="0.0" width="59.5" height="20.5"/>
@@ -125,14 +128,12 @@
                                     </switch>
                                 </subviews>
                             </stackView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Stv-9S-99Z">
-                                <rect key="frame" x="0.0" y="64" width="375" height="2.5"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.93254982830695732" green="0.94178299492385786" blue="0.94178299492385786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Oh4-Lx-qW7" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="7Js-6c-pFD"/>
                             <constraint firstItem="D68-Xn-Mdv" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="7tu-D8-pQN"/>
+                            <constraint firstItem="D68-Xn-Mdv" firstAttribute="top" secondItem="Stv-9S-99Z" secondAttribute="bottom" constant="6.5" id="8aA-1b-bli"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerY" secondItem="QLd-Q6-6J3" secondAttribute="centerY" id="Dec-0W-Kyi"/>
                             <constraint firstItem="Oh4-Lx-qW7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="ESa-FV-5i0"/>
                             <constraint firstAttribute="trailing" secondItem="Stv-9S-99Z" secondAttribute="trailing" id="IRX-Bs-Fjv"/>
@@ -141,7 +142,6 @@
                             <constraint firstItem="VjA-8r-tau" firstAttribute="top" secondItem="Oh4-Lx-qW7" secondAttribute="bottom" constant="4" id="O0I-Na-Ec1"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="trailing" secondItem="QLd-Q6-6J3" secondAttribute="trailingMargin" id="RV9-2e-v85"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="jHR-N7-aM0"/>
-                            <constraint firstItem="Oh4-Lx-qW7" firstAttribute="top" secondItem="D68-Xn-Mdv" secondAttribute="bottom" constant="8" id="pE9-SA-pJa"/>
                             <constraint firstItem="Stv-9S-99Z" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leading" id="yVu-3Q-5vY"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="yYl-0Y-oNc"/>
                         </constraints>
@@ -329,7 +329,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhF-to-Qq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1584.8" y="796.55172413793105"/>
+            <point key="canvasLocation" x="1585" y="848"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZAH-bD-IxW">
@@ -345,7 +345,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1i-xf-7ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="797"/>
+            <point key="canvasLocation" x="636" y="848"/>
         </scene>
         <!--Scar App Cleanup-->
         <scene sceneID="s5S-yB-QcV">
