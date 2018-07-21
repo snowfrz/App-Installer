@@ -1,0 +1,3 @@
+target 'App Installer' do
+  pod 'OpenSSL-Universal', '~> 1.0.2o'
+end

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOW-is-eq7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LOW-is-eq7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UqX-N1-Do0">
-                                <rect key="frame" x="16" y="294" width="343" height="80"/>
+                                <rect key="frame" x="16" y="293.5" width="343" height="80"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Direct URL to .ipa file" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P7a-CT-spm" customClass="PaddedTextField">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -46,7 +46,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Oh4-Lx-qW7">
-                                <rect key="frame" x="28" y="507" width="320" height="156"/>
+                                <rect key="frame" x="27.5" y="507" width="320" height="156"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follow us on Twitter for news and updates!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZo-BZ-SDG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
@@ -60,7 +60,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLJ-WM-Cau" customClass="TwitterButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="156" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <state key="normal" title="Justin"/>
+                                                <state key="normal" title="Justin Proulx"/>
                                                 <connections>
                                                     <action selector="openTwitter:" destination="BtY-2J-ecF" eventType="touchUpInside" id="pCS-Fl-okz"/>
                                                 </connections>
@@ -108,21 +108,51 @@
                                     <constraint firstAttribute="width" priority="999" constant="320" id="Nbt-ka-YCc"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="D68-Xn-Mdv">
+                                <rect key="frame" x="158" y="439.5" width="59.5" height="59.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Re-sign" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzS-J0-0go">
+                                        <rect key="frame" x="0.0" y="0.0" width="59.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ngh-Wp-awv">
+                                        <rect key="frame" x="5" y="28.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="resignSwitchChanged:" destination="BtY-2J-ecF" eventType="valueChanged" id="czW-fm-MWb"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Stv-9S-99Z">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2.5"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.93254982830695732" green="0.94178299492385786" blue="0.94178299492385786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Oh4-Lx-qW7" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="7Js-6c-pFD"/>
+                            <constraint firstItem="D68-Xn-Mdv" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="7tu-D8-pQN"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerY" secondItem="QLd-Q6-6J3" secondAttribute="centerY" id="Dec-0W-Kyi"/>
                             <constraint firstItem="Oh4-Lx-qW7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="ESa-FV-5i0"/>
+                            <constraint firstAttribute="trailing" secondItem="Stv-9S-99Z" secondAttribute="trailing" id="IRX-Bs-Fjv"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Oh4-Lx-qW7" secondAttribute="trailing" id="IYp-Cj-hcl"/>
+                            <constraint firstItem="Stv-9S-99Z" firstAttribute="top" secondItem="Sb3-pW-Maw" secondAttribute="bottom" id="MGW-35-vU6"/>
                             <constraint firstItem="VjA-8r-tau" firstAttribute="top" secondItem="Oh4-Lx-qW7" secondAttribute="bottom" constant="4" id="O0I-Na-Ec1"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="trailing" secondItem="QLd-Q6-6J3" secondAttribute="trailingMargin" id="RV9-2e-v85"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leadingMargin" id="jHR-N7-aM0"/>
+                            <constraint firstItem="Oh4-Lx-qW7" firstAttribute="top" secondItem="D68-Xn-Mdv" secondAttribute="bottom" constant="8" id="pE9-SA-pJa"/>
+                            <constraint firstItem="Stv-9S-99Z" firstAttribute="leading" secondItem="QLd-Q6-6J3" secondAttribute="leading" id="yVu-3Q-5vY"/>
                             <constraint firstItem="UqX-N1-Do0" firstAttribute="centerX" secondItem="QLd-Q6-6J3" secondAttribute="centerX" id="yYl-0Y-oNc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="App Installer" id="WgR-Wp-XZA">
-                        <barButtonItem key="rightBarButtonItem" title="Cleanup" id="3Vk-VX-yvm">
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="tmP-cd-kJ0">
+                            <connections>
+                                <segue destination="yDe-fx-gnh" kind="presentation" id="NUZ-da-bYD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="trash" id="3Vk-VX-yvm">
                             <connections>
                                 <segue destination="ewx-Z2-SOE" kind="presentation" id="Rsr-1P-Fuy"/>
                             </connections>
@@ -131,12 +161,191 @@
                     <connections>
                         <outlet property="URLTextField" destination="P7a-CT-spm" id="khb-pv-hIb"/>
                         <outlet property="installButton" destination="AWF-hs-AJ8" id="HPv-D9-mkt"/>
+                        <outlet property="progressView" destination="Stv-9S-99Z" id="9PD-q9-CrA"/>
+                        <outlet property="resignSwitch" destination="ngh-Wp-awv" id="qvz-aC-LVW"/>
                         <outlet property="versionLabel" destination="8w3-bP-0WE" id="f7G-ms-qu4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcx-SL-lDd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="636" y="67.916041979010501"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="H9b-rE-eji">
+            <objects>
+                <tableViewController id="gz6-yn-r64" customClass="SettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="WUe-Sy-LUE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Authentication" footerTitle="Your email, password and UDID are only saved on your device and sent to Apple." id="ll0-jY-Dae">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="YOE-Fa-0r3">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YOE-Fa-0r3" id="bFa-3i-rW4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Apple ID Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o8e-zi-7bZ">
+                                                    <rect key="frame" x="16" y="13.5" width="343" height="17"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="o8e-zi-7bZ" firstAttribute="centerY" secondItem="bFa-3i-rW4" secondAttribute="centerY" id="A5F-7q-XEH"/>
+                                                <constraint firstItem="o8e-zi-7bZ" firstAttribute="centerX" secondItem="bFa-3i-rW4" secondAttribute="centerX" id="Rjc-vg-PdF"/>
+                                                <constraint firstItem="o8e-zi-7bZ" firstAttribute="leading" secondItem="bFa-3i-rW4" secondAttribute="leading" constant="16" id="SFp-Qw-U8W"/>
+                                                <constraint firstAttribute="trailing" secondItem="o8e-zi-7bZ" secondAttribute="trailing" constant="16" id="dU6-24-nf1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="YRR-VF-c4y">
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YRR-VF-c4y" id="2VW-5p-qKI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="99h-4z-Hac">
+                                                    <rect key="frame" x="16" y="13.5" width="343" height="17"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="99h-4z-Hac" firstAttribute="centerY" secondItem="2VW-5p-qKI" secondAttribute="centerY" id="O4z-X4-5eq"/>
+                                                <constraint firstAttribute="trailing" secondItem="99h-4z-Hac" secondAttribute="trailing" constant="16" id="Wa1-qE-JTF"/>
+                                                <constraint firstItem="99h-4z-Hac" firstAttribute="centerX" secondItem="2VW-5p-qKI" secondAttribute="centerX" id="qM0-2w-HO1"/>
+                                                <constraint firstItem="99h-4z-Hac" firstAttribute="leading" secondItem="2VW-5p-qKI" secondAttribute="leading" constant="16" id="uYU-yJ-MsM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="8hI-Je-ST0">
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8hI-Je-ST0" id="LTL-aG-dZo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Device UDID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5H2-LC-zyU">
+                                                    <rect key="frame" x="16" y="13.5" width="343" height="17"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5H2-LC-zyU" firstAttribute="centerY" secondItem="LTL-aG-dZo" secondAttribute="centerY" id="K5W-y5-NpY"/>
+                                                <constraint firstItem="5H2-LC-zyU" firstAttribute="centerX" secondItem="LTL-aG-dZo" secondAttribute="centerX" id="Ox5-lV-UbN"/>
+                                                <constraint firstAttribute="trailing" secondItem="5H2-LC-zyU" secondAttribute="trailing" constant="16" id="Qa5-3d-TE6"/>
+                                                <constraint firstItem="5H2-LC-zyU" firstAttribute="leading" secondItem="LTL-aG-dZo" secondAttribute="leading" constant="16" id="tTH-bX-460"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="" id="nYj-f8-Wai">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="FBR-T5-PSa">
+                                        <rect key="frame" x="0.0" y="251.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FBR-T5-PSa" id="Wnw-c5-B7G">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vk1-n9-SK4">
+                                                    <rect key="frame" x="16" y="7" width="343" height="30"/>
+                                                    <state key="normal" title="Log In"/>
+                                                    <connections>
+                                                        <action selector="logIn:" destination="gz6-yn-r64" eventType="touchUpInside" id="3uT-Ft-w0y"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Vk1-n9-SK4" firstAttribute="centerX" secondItem="Wnw-c5-B7G" secondAttribute="centerX" id="7ZU-Hk-Y6s"/>
+                                                <constraint firstAttribute="trailing" secondItem="Vk1-n9-SK4" secondAttribute="trailing" constant="16" id="U04-CK-thW"/>
+                                                <constraint firstItem="Vk1-n9-SK4" firstAttribute="leading" secondItem="Wnw-c5-B7G" secondAttribute="leading" constant="16" id="YTM-Bu-5IT"/>
+                                                <constraint firstItem="Vk1-n9-SK4" firstAttribute="centerY" secondItem="Wnw-c5-B7G" secondAttribute="centerY" id="fjd-qB-2vJ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="" footerTitle="You can also get your UDID in iTunes on your computer" id="Nlg-3x-scV">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Vn8-6g-F4P">
+                                        <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vn8-6g-F4P" id="XTK-J5-nmQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MvF-7Z-RbY">
+                                                    <rect key="frame" x="16" y="7" width="343" height="30"/>
+                                                    <state key="normal" title="Get UDID"/>
+                                                    <connections>
+                                                        <action selector="getUDID:" destination="gz6-yn-r64" eventType="touchUpInside" id="5O1-np-nbN"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="MvF-7Z-RbY" secondAttribute="trailing" constant="16" id="0Iu-tl-DeN"/>
+                                                <constraint firstItem="MvF-7Z-RbY" firstAttribute="leading" secondItem="XTK-J5-nmQ" secondAttribute="leading" constant="16" id="CUl-Rc-v28"/>
+                                                <constraint firstItem="MvF-7Z-RbY" firstAttribute="centerX" secondItem="XTK-J5-nmQ" secondAttribute="centerX" id="FpC-Bo-bp7"/>
+                                                <constraint firstItem="MvF-7Z-RbY" firstAttribute="centerY" secondItem="XTK-J5-nmQ" secondAttribute="centerY" id="M29-T4-lPe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES"/>
+                                        </accessibility>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="gz6-yn-r64" id="o8b-EH-aaH"/>
+                            <outlet property="delegate" destination="gz6-yn-r64" id="2VR-Av-uyX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="lyY-7F-hSR">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="gyK-cW-c5z">
+                            <connections>
+                                <action selector="Done:" destination="gz6-yn-r64" id="EGv-z9-e9a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="passwordTextField" destination="99h-4z-Hac" id="VRc-Tb-aSA"/>
+                        <outlet property="udidTextField" destination="5H2-LC-zyU" id="gaA-Vb-ROs"/>
+                        <outlet property="usernameTextField" destination="o8e-zi-7bZ" id="fJj-H5-3in"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhF-to-Qq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584.8" y="796.55172413793105"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZAH-bD-IxW">
+            <objects>
+                <navigationController id="yDe-fx-gnh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yPP-74-S66">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gz6-yn-r64" kind="relationship" relationship="rootViewController" id="aok-kS-iLC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h1i-xf-7ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="797"/>
         </scene>
         <!--Scar App Cleanup-->
         <scene sceneID="s5S-yB-QcV">
@@ -206,14 +415,14 @@ NOTE: If the "Delete App" is missing, check your home screen as the scar app may
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdz-rK-gdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2569" y="68"/>
+            <point key="canvasLocation" x="2558" y="68"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jMB-bU-n8y">
             <objects>
                 <navigationController id="ewx-Z2-SOE" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rZv-ao-2xg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -222,14 +431,14 @@ NOTE: If the "Delete App" is missing, check your home screen as the scar app may
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wOy-t6-1b0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1598" y="68"/>
+            <point key="canvasLocation" x="1586" y="68"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="no6-5K-Lcw">
             <objects>
                 <navigationController id="LOW-is-eq7" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nYD-DM-i23">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -241,4 +450,8 @@ NOTE: If the "Delete App" is missing, check your home screen as the scar app may
             <point key="canvasLocation" x="-317" y="68"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="30" height="30"/>
+        <image name="trash" width="30" height="30"/>
+    </resources>
 </document>

@@ -17,6 +17,10 @@
     
     IBOutlet UITextView *instructionsTextView;
     IBOutlet UILabel *versionLabel;
+    
+    IBOutlet UISwitch *resignSwitch;
+    
+    IBOutlet UIProgressView *progressView;
 }
 
 - (void)pasteboardInstallAction;

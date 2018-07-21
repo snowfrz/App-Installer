@@ -18,6 +18,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // delete garbage
+    NSString *tempDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"temp"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    if ([fileManager fileExistsAtPath:tempDir])
+    {
+        [fileManager removeItemAtPath:tempDir error:&error];
+    }
+    NSString *ipaDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"general.ipa"];
+    if ([fileManager fileExistsAtPath:ipaDir])
+    {
+        [fileManager removeItemAtPath:ipaDir error:&error];
+    }
+    
     // if we launched from a shortcut, then return NO here so performActionForShortcut will take over
     BOOL launchedFromShortcut = launchOptions[UIApplicationLaunchOptionsShortcutItemKey];
 

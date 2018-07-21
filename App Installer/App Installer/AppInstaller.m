@@ -24,24 +24,24 @@
     });
 
     // create our task
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:[self manifestPostRequestWithURL:downloadLink]
-                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
-                                                {
-                                                    // the task completed without error do things
-                                                    if (!error)
-                                                    {
-                                                        // parse the headers into a dictionary so we can get the download link from them
-                                                        NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:[self manifestPostRequestWithURL:downloadLink] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
+    {
+        // the task completed without error do things
+        if (!error)
+        {
+            // parse the headers into a dictionary so we can get the download link from them
+            NSDictionary *headers = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
 
-                                                        // attempt to download our app
-                                                        [self downloadAppWithManifestURL:[@"https://file.io/" stringByAppendingString:headers[@"key"]]];
-                                                    }
-
-                                                    // return the completion
-                                                    dispatch_async(dispatch_get_main_queue(), ^{
-                                                        completion(error);
-                                                    });
-                                                }];
+            // attempt to download our app
+            [self downloadAppWithManifestURL:[@"https://file.io/" stringByAppendingString:headers[@"key"]]];
+        }
+        
+        // return the completion
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(error);
+        });
+    }];
+    
     // make sure we start the task
     [dataTask resume];
 }

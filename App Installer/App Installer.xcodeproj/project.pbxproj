@@ -20,6 +20,66 @@
 		D01EA8C41EFCCD9D006FB508 /* App_InstallerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8C31EFCCD9D006FB508 /* App_InstallerTests.m */; };
 		D01EA8CF1EFCCD9D006FB508 /* App_InstallerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D01EA8CE1EFCCD9D006FB508 /* App_InstallerUITests.m */; };
 		D03166801EFCD62400E8EB77 /* general.plist in Resources */ = {isa = PBXBuildFile; fileRef = D031667F1EFCD62400E8EB77 /* general.plist */; };
+		D077951D2101564400207380 /* AppResigner.m in Sources */ = {isa = PBXBuildFile; fileRef = D077951C2101564400207380 /* AppResigner.m */; };
+		D07795A02101947B00207380 /* NSData+GZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = D07795252101947B00207380 /* NSData+GZIP.m */; };
+		D07795A12101947B00207380 /* EEAppleServices.m in Sources */ = {isa = PBXBuildFile; fileRef = D07795262101947B00207380 /* EEAppleServices.m */; };
+		D07795A22101947B00207380 /* bplist.c in Sources */ = {isa = PBXBuildFile; fileRef = D077952B2101947B00207380 /* bplist.c */; };
+		D07795A32101947B00207380 /* time64.c in Sources */ = {isa = PBXBuildFile; fileRef = D077952C2101947B00207380 /* time64.c */; };
+		D07795A42101947B00207380 /* xplist.c in Sources */ = {isa = PBXBuildFile; fileRef = D077952D2101947B00207380 /* xplist.c */; };
+		D07795A52101947B00207380 /* list.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795332101947B00207380 /* list.c */; };
+		D07795A62101947B00207380 /* node_list.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795342101947B00207380 /* node_list.c */; };
+		D07795A72101947B00207380 /* node_iterator.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795352101947B00207380 /* node_iterator.c */; };
+		D07795A82101947B00207380 /* iterator.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795372101947B00207380 /* iterator.c */; };
+		D07795A92101947B00207380 /* node.c in Sources */ = {isa = PBXBuildFile; fileRef = D077953D2101947B00207380 /* node.c */; };
+		D07795AA2101947B00207380 /* Structure.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D077953E2101947B00207380 /* Structure.cpp */; };
+		D07795AB2101947B00207380 /* Uid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795402101947B00207380 /* Uid.cpp */; };
+		D07795AC2101947B00207380 /* Date.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795412101947B00207380 /* Date.cpp */; };
+		D07795AD2101947B00207380 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795432101947B00207380 /* Node.cpp */; };
+		D07795AE2101947B00207380 /* String.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795452101947B00207380 /* String.cpp */; };
+		D07795AF2101947B00207380 /* plist.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795482101947B00207380 /* plist.c */; };
+		D07795B02101947B00207380 /* Data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795492101947B00207380 /* Data.cpp */; };
+		D07795B12101947B00207380 /* Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D077954B2101947B00207380 /* Array.cpp */; };
+		D07795B22101947B00207380 /* Real.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D077954C2101947B00207380 /* Real.cpp */; };
+		D07795B32101947B00207380 /* bytearray.c in Sources */ = {isa = PBXBuildFile; fileRef = D077954D2101947B00207380 /* bytearray.c */; };
+		D07795B42101947B00207380 /* ptrarray.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795512101947B00207380 /* ptrarray.c */; };
+		D07795B52101947B00207380 /* hashtable.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795522101947B00207380 /* hashtable.c */; };
+		D07795B62101947B00207380 /* base64.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795542101947B00207380 /* base64.c */; };
+		D07795B72101947B00207380 /* Integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795562101947B00207380 /* Integer.cpp */; };
+		D07795B82101947B00207380 /* Boolean.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795572101947B00207380 /* Boolean.cpp */; };
+		D07795B92101947B00207380 /* Key.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795592101947B00207380 /* Key.cpp */; };
+		D07795BA2101947B00207380 /* Dictionary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D077955B2101947B00207380 /* Dictionary.cpp */; };
+		D07795BB2101947B00207380 /* EESigning.mm in Sources */ = {isa = PBXBuildFile; fileRef = D077955F2101947B00207380 /* EESigning.mm */; };
+		D07795BC2101947B00207380 /* EEProvisioning.mm in Sources */ = {isa = PBXBuildFile; fileRef = D07795642101947B00207380 /* EEProvisioning.mm */; };
+		D07795BD2101947B00207380 /* verisign-2048-128.pem in Resources */ = {isa = PBXBuildFile; fileRef = D07795662101947B00207380 /* verisign-2048-128.pem */; };
+		D07795BE2101947B00207380 /* apple-dev.pem in Resources */ = {isa = PBXBuildFile; fileRef = D07795672101947B00207380 /* apple-dev.pem */; };
+		D07795BF2101947B00207380 /* verisign-1024-128.pem in Resources */ = {isa = PBXBuildFile; fileRef = D07795682101947B00207380 /* verisign-1024-128.pem */; };
+		D07795C02101947B00207380 /* apple-ios.pem in Resources */ = {isa = PBXBuildFile; fileRef = D07795692101947B00207380 /* apple-ios.pem */; };
+		D07795C12101947B00207380 /* verisign-2048-256.pem in Resources */ = {isa = PBXBuildFile; fileRef = D077956A2101947B00207380 /* verisign-2048-256.pem */; };
+		D07795C22101947B00207380 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = D077956E2101947B00207380 /* SAMKeychainQuery.m */; };
+		D07795C32101947B00207380 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = D07795702101947B00207380 /* SAMKeychain.m */; };
+		D07795C42101947B00207380 /* ldid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D07795742101947B00207380 /* ldid.cpp */; };
+		D07795C52101947B00207380 /* lookup2.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795752101947B00207380 /* lookup2.c */; };
+		D07795C62101947B00207380 /* EEBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = D07795762101947B00207380 /* EEBackend.m */; };
+		D07795C72101947B00207380 /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = D077957A2101947B00207380 /* crypt.c */; };
+		D07795C82101947B00207380 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = D077957B2101947B00207380 /* unzip.c */; };
+		D07795C92101947B00207380 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = D077957C2101947B00207380 /* zip.c */; };
+		D07795CA2101947B00207380 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = D077957E2101947B00207380 /* ioapi.c */; };
+		D07795CB2101947B00207380 /* ioapi_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795802101947B00207380 /* ioapi_buf.c */; };
+		D07795CC2101947B00207380 /* ioapi_mem.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795842101947B00207380 /* ioapi_mem.c */; };
+		D07795CD2101947B00207380 /* minishared.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795852101947B00207380 /* minishared.c */; };
+		D07795CE2101947B00207380 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = D077958B2101947B00207380 /* aeskey.c */; };
+		D07795CF2101947B00207380 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = D077958C2101947B00207380 /* hmac.c */; };
+		D07795D02101947B00207380 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = D077958F2101947B00207380 /* aescrypt.c */; };
+		D07795D12101947B00207380 /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795902101947B00207380 /* fileenc.c */; };
+		D07795D22101947B00207380 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795922101947B00207380 /* sha1.c */; };
+		D07795D32101947B00207380 /* aes_ni.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795952101947B00207380 /* aes_ni.c */; };
+		D07795D42101947B00207380 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795972101947B00207380 /* prng.c */; };
+		D07795D52101947B00207380 /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = D07795992101947B00207380 /* pwd2key.c */; };
+		D07795D62101947B00207380 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = D077959A2101947B00207380 /* aestab.c */; };
+		D07795D72101947B00207380 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = D077959F2101947B00207380 /* SSZipArchive.m */; };
+		D07AA5F3210273BF00EC6524 /* RPVAccountChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = D07AA5F2210273BE00EC6524 /* RPVAccountChecker.m */; };
+		D07AA5F7210273F800EC6524 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D07AA5F6210273F800EC6524 /* SettingsTableViewController.m */; };
+		DD804A656DE2DF16FE1CF487 /* libPods-App Installer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F08B2A958E5868159BF1D85C /* libPods-App Installer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +100,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AEB8B1503AB6123841BC69AF /* Pods-App Installer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Installer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-App Installer/Pods-App Installer.debug.xcconfig"; sourceTree = "<group>"; };
+		B4E719A80C2A389496A33388 /* Pods-App Installer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App Installer.release.xcconfig"; path = "Pods/Target Support Files/Pods-App Installer/Pods-App Installer.release.xcconfig"; sourceTree = "<group>"; };
 		B80B19EC1F05E9120048E629 /* AppInstaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInstaller.h; sourceTree = "<group>"; };
 		B80B19ED1F05E9120048E629 /* AppInstaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInstaller.m; sourceTree = "<group>"; };
 		C35A8BCD1F09F37C00E468A1 /* PaddedTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaddedTextField.m; sourceTree = "<group>"; };
@@ -66,6 +128,127 @@
 		D01EA8CE1EFCCD9D006FB508 /* App_InstallerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_InstallerUITests.m; sourceTree = "<group>"; };
 		D01EA8D01EFCCD9D006FB508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D031667F1EFCD62400E8EB77 /* general.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = general.plist; sourceTree = "<group>"; };
+		D077951B2101564400207380 /* AppResigner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppResigner.h; sourceTree = "<group>"; };
+		D077951C2101564400207380 /* AppResigner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppResigner.m; sourceTree = "<group>"; };
+		D07795232101947B00207380 /* NSData+GZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GZIP.h"; sourceTree = "<group>"; };
+		D07795242101947B00207380 /* EEAppleServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEAppleServices.h; sourceTree = "<group>"; };
+		D07795252101947B00207380 /* NSData+GZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GZIP.m"; sourceTree = "<group>"; };
+		D07795262101947B00207380 /* EEAppleServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEAppleServices.m; sourceTree = "<group>"; };
+		D07795282101947B00207380 /* strbuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strbuf.h; sourceTree = "<group>"; };
+		D07795292101947B00207380 /* plist2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plist2.h; sourceTree = "<group>"; };
+		D077952A2101947B00207380 /* bytearray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bytearray.h; sourceTree = "<group>"; };
+		D077952B2101947B00207380 /* bplist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bplist.c; sourceTree = "<group>"; };
+		D077952C2101947B00207380 /* time64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = time64.c; sourceTree = "<group>"; };
+		D077952D2101947B00207380 /* xplist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xplist.c; sourceTree = "<group>"; };
+		D077952E2101947B00207380 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		D077952F2101947B00207380 /* Structure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Structure.h; sourceTree = "<group>"; };
+		D07795302101947B00207380 /* ptrarray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptrarray.h; sourceTree = "<group>"; };
+		D07795312101947B00207380 /* hashtable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hashtable.h; sourceTree = "<group>"; };
+		D07795332101947B00207380 /* list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = "<group>"; };
+		D07795342101947B00207380 /* node_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = node_list.c; sourceTree = "<group>"; };
+		D07795352101947B00207380 /* node_iterator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = node_iterator.c; sourceTree = "<group>"; };
+		D07795362101947B00207380 /* node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node.h; sourceTree = "<group>"; };
+		D07795372101947B00207380 /* iterator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iterator.c; sourceTree = "<group>"; };
+		D07795382101947B00207380 /* list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
+		D07795392101947B00207380 /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		D077953A2101947B00207380 /* node_iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node_iterator.h; sourceTree = "<group>"; };
+		D077953B2101947B00207380 /* node_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = node_list.h; sourceTree = "<group>"; };
+		D077953C2101947B00207380 /* iterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iterator.h; sourceTree = "<group>"; };
+		D077953D2101947B00207380 /* node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = node.c; sourceTree = "<group>"; };
+		D077953E2101947B00207380 /* Structure.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Structure.cpp; sourceTree = "<group>"; };
+		D077953F2101947B00207380 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		D07795402101947B00207380 /* Uid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Uid.cpp; sourceTree = "<group>"; };
+		D07795412101947B00207380 /* Date.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Date.cpp; sourceTree = "<group>"; };
+		D07795422101947B00207380 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		D07795432101947B00207380 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		D07795442101947B00207380 /* Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Date.h; sourceTree = "<group>"; };
+		D07795452101947B00207380 /* String.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
+		D07795462101947B00207380 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		D07795472101947B00207380 /* Real.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Real.h; sourceTree = "<group>"; };
+		D07795482101947B00207380 /* plist.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = plist.c; sourceTree = "<group>"; };
+		D07795492101947B00207380 /* Data.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Data.cpp; sourceTree = "<group>"; };
+		D077954A2101947B00207380 /* Boolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Boolean.h; sourceTree = "<group>"; };
+		D077954B2101947B00207380 /* Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Array.cpp; sourceTree = "<group>"; };
+		D077954C2101947B00207380 /* Real.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Real.cpp; sourceTree = "<group>"; };
+		D077954D2101947B00207380 /* bytearray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bytearray.c; sourceTree = "<group>"; };
+		D077954E2101947B00207380 /* Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dictionary.h; sourceTree = "<group>"; };
+		D077954F2101947B00207380 /* plist++.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "plist++.h"; sourceTree = "<group>"; };
+		D07795502101947B00207380 /* time64_limits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time64_limits.h; sourceTree = "<group>"; };
+		D07795512101947B00207380 /* ptrarray.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ptrarray.c; sourceTree = "<group>"; };
+		D07795522101947B00207380 /* hashtable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hashtable.c; sourceTree = "<group>"; };
+		D07795532101947B00207380 /* Array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Array.h; sourceTree = "<group>"; };
+		D07795542101947B00207380 /* base64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = base64.c; sourceTree = "<group>"; };
+		D07795552101947B00207380 /* time64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time64.h; sourceTree = "<group>"; };
+		D07795562101947B00207380 /* Integer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Integer.cpp; sourceTree = "<group>"; };
+		D07795572101947B00207380 /* Boolean.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Boolean.cpp; sourceTree = "<group>"; };
+		D07795582101947B00207380 /* Integer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integer.h; sourceTree = "<group>"; };
+		D07795592101947B00207380 /* Key.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Key.cpp; sourceTree = "<group>"; };
+		D077955A2101947B00207380 /* plist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plist.h; sourceTree = "<group>"; };
+		D077955B2101947B00207380 /* Dictionary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dictionary.cpp; sourceTree = "<group>"; };
+		D077955C2101947B00207380 /* Uid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Uid.h; sourceTree = "<group>"; };
+		D077955D2101947B00207380 /* String.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = String.h; sourceTree = "<group>"; };
+		D077955F2101947B00207380 /* EESigning.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EESigning.mm; sourceTree = "<group>"; };
+		D07795602101947B00207380 /* EESigning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EESigning.h; sourceTree = "<group>"; };
+		D07795612101947B00207380 /* EEBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEBackend.h; sourceTree = "<group>"; };
+		D07795632101947B00207380 /* EEProvisioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEProvisioning.h; sourceTree = "<group>"; };
+		D07795642101947B00207380 /* EEProvisioning.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EEProvisioning.mm; sourceTree = "<group>"; };
+		D07795662101947B00207380 /* verisign-2048-128.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "verisign-2048-128.pem"; sourceTree = "<group>"; };
+		D07795672101947B00207380 /* apple-dev.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-dev.pem"; sourceTree = "<group>"; };
+		D07795682101947B00207380 /* verisign-1024-128.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "verisign-1024-128.pem"; sourceTree = "<group>"; };
+		D07795692101947B00207380 /* apple-ios.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "apple-ios.pem"; sourceTree = "<group>"; };
+		D077956A2101947B00207380 /* verisign-2048-256.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "verisign-2048-256.pem"; sourceTree = "<group>"; };
+		D077956C2101947B00207380 /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
+		D077956E2101947B00207380 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
+		D077956F2101947B00207380 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
+		D07795702101947B00207380 /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
+		D07795722101947B00207380 /* ldid.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ldid.hpp; sourceTree = "<group>"; };
+		D07795732101947B00207380 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		D07795742101947B00207380 /* ldid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ldid.cpp; sourceTree = "<group>"; };
+		D07795752101947B00207380 /* lookup2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lookup2.c; sourceTree = "<group>"; };
+		D07795762101947B00207380 /* EEBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEBackend.m; sourceTree = "<group>"; };
+		D07795782101947B00207380 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		D077957A2101947B00207380 /* crypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crypt.c; sourceTree = "<group>"; };
+		D077957B2101947B00207380 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		D077957C2101947B00207380 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		D077957D2101947B00207380 /* minishared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = minishared.h; sourceTree = "<group>"; };
+		D077957E2101947B00207380 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		D077957F2101947B00207380 /* ioapi_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi_mem.h; sourceTree = "<group>"; };
+		D07795802101947B00207380 /* ioapi_buf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi_buf.c; sourceTree = "<group>"; };
+		D07795812101947B00207380 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		D07795822101947B00207380 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		D07795832101947B00207380 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		D07795842101947B00207380 /* ioapi_mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi_mem.c; sourceTree = "<group>"; };
+		D07795852101947B00207380 /* minishared.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = minishared.c; sourceTree = "<group>"; };
+		D07795862101947B00207380 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		D07795872101947B00207380 /* ioapi_buf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi_buf.h; sourceTree = "<group>"; };
+		D07795892101947B00207380 /* prng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
+		D077958A2101947B00207380 /* aes_ni.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_ni.h; sourceTree = "<group>"; };
+		D077958B2101947B00207380 /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
+		D077958C2101947B00207380 /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
+		D077958D2101947B00207380 /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
+		D077958E2101947B00207380 /* pwd2key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pwd2key.h; sourceTree = "<group>"; };
+		D077958F2101947B00207380 /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
+		D07795902101947B00207380 /* fileenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fileenc.c; sourceTree = "<group>"; };
+		D07795912101947B00207380 /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
+		D07795922101947B00207380 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
+		D07795932101947B00207380 /* brg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
+		D07795942101947B00207380 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
+		D07795952101947B00207380 /* aes_ni.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aes_ni.c; sourceTree = "<group>"; };
+		D07795962101947B00207380 /* brg_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
+		D07795972101947B00207380 /* prng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
+		D07795982101947B00207380 /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
+		D07795992101947B00207380 /* pwd2key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pwd2key.c; sourceTree = "<group>"; };
+		D077959A2101947B00207380 /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
+		D077959B2101947B00207380 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
+		D077959C2101947B00207380 /* fileenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
+		D077959D2101947B00207380 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		D077959E2101947B00207380 /* SSZipCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipCommon.h; sourceTree = "<group>"; };
+		D077959F2101947B00207380 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		D07AA5F1210273BE00EC6524 /* RPVAccountChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RPVAccountChecker.h; sourceTree = "<group>"; };
+		D07AA5F2210273BE00EC6524 /* RPVAccountChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RPVAccountChecker.m; sourceTree = "<group>"; };
+		D07AA5F5210273F800EC6524 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		D07AA5F6210273F800EC6524 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		F08B2A958E5868159BF1D85C /* libPods-App Installer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-App Installer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD804A656DE2DF16FE1CF487 /* libPods-App Installer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,13 +277,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFAAED7B3F5C957F4928485A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AEB8B1503AB6123841BC69AF /* Pods-App Installer.debug.xcconfig */,
+				B4E719A80C2A389496A33388 /* Pods-App Installer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D01EA89D1EFCCD9D006FB508 = {
 			isa = PBXGroup;
 			children = (
+				D07795212101947B00207380 /* libProvision */,
+				D07AA5F4210273CB00EC6524 /* RPVAccountChecker */,
 				D01EA8A81EFCCD9D006FB508 /* App Installer */,
 				D01EA8C21EFCCD9D006FB508 /* App InstallerTests */,
 				D01EA8CD1EFCCD9D006FB508 /* App InstallerUITests */,
 				D01EA8A71EFCCD9D006FB508 /* Products */,
+				AFAAED7B3F5C957F4928485A /* Pods */,
+				DF5269F4F2A3C35BCA170F91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,8 +317,12 @@
 				D01EA8AD1EFCCD9D006FB508 /* AppDelegate.m */,
 				D01EA8AF1EFCCD9D006FB508 /* ViewController.h */,
 				D01EA8B01EFCCD9D006FB508 /* ViewController.m */,
+				D07AA5F5210273F800EC6524 /* SettingsTableViewController.h */,
+				D07AA5F6210273F800EC6524 /* SettingsTableViewController.m */,
 				B80B19EC1F05E9120048E629 /* AppInstaller.h */,
 				B80B19ED1F05E9120048E629 /* AppInstaller.m */,
+				D077951B2101564400207380 /* AppResigner.h */,
+				D077951C2101564400207380 /* AppResigner.m */,
 				D01EA8B21EFCCD9D006FB508 /* Main.storyboard */,
 				D01EA8B51EFCCD9D006FB508 /* Assets.xcassets */,
 				D01EA8BA1EFCCD9D006FB508 /* Info.plist */,
@@ -173,6 +374,240 @@
 			name = "View subclasses";
 			sourceTree = "<group>";
 		};
+		D07795212101947B00207380 /* libProvision */ = {
+			isa = PBXGroup;
+			children = (
+				D07795222101947B00207380 /* Apple Services */,
+				D07795272101947B00207380 /* libplist */,
+				D077955E2101947B00207380 /* Signing */,
+				D07795612101947B00207380 /* EEBackend.h */,
+				D07795622101947B00207380 /* Provisioning */,
+				D07795652101947B00207380 /* Certificates */,
+				D077956B2101947B00207380 /* SAMKeychain */,
+				D07795712101947B00207380 /* ldid */,
+				D07795762101947B00207380 /* EEBackend.m */,
+				D07795772101947B00207380 /* SSZipArchive */,
+			);
+			path = libProvision;
+			sourceTree = "<group>";
+		};
+		D07795222101947B00207380 /* Apple Services */ = {
+			isa = PBXGroup;
+			children = (
+				D07795232101947B00207380 /* NSData+GZIP.h */,
+				D07795242101947B00207380 /* EEAppleServices.h */,
+				D07795252101947B00207380 /* NSData+GZIP.m */,
+				D07795262101947B00207380 /* EEAppleServices.m */,
+			);
+			path = "Apple Services";
+			sourceTree = "<group>";
+		};
+		D07795272101947B00207380 /* libplist */ = {
+			isa = PBXGroup;
+			children = (
+				D07795282101947B00207380 /* strbuf.h */,
+				D07795292101947B00207380 /* plist2.h */,
+				D077952A2101947B00207380 /* bytearray.h */,
+				D077952B2101947B00207380 /* bplist.c */,
+				D077952C2101947B00207380 /* time64.c */,
+				D077952D2101947B00207380 /* xplist.c */,
+				D077952E2101947B00207380 /* base64.h */,
+				D077952F2101947B00207380 /* Structure.h */,
+				D07795302101947B00207380 /* ptrarray.h */,
+				D07795312101947B00207380 /* hashtable.h */,
+				D07795322101947B00207380 /* libcnary */,
+				D077953E2101947B00207380 /* Structure.cpp */,
+				D077953F2101947B00207380 /* Data.h */,
+				D07795402101947B00207380 /* Uid.cpp */,
+				D07795412101947B00207380 /* Date.cpp */,
+				D07795422101947B00207380 /* Key.h */,
+				D07795432101947B00207380 /* Node.cpp */,
+				D07795442101947B00207380 /* Date.h */,
+				D07795452101947B00207380 /* String.cpp */,
+				D07795462101947B00207380 /* Node.h */,
+				D07795472101947B00207380 /* Real.h */,
+				D07795482101947B00207380 /* plist.c */,
+				D07795492101947B00207380 /* Data.cpp */,
+				D077954A2101947B00207380 /* Boolean.h */,
+				D077954B2101947B00207380 /* Array.cpp */,
+				D077954C2101947B00207380 /* Real.cpp */,
+				D077954D2101947B00207380 /* bytearray.c */,
+				D077954E2101947B00207380 /* Dictionary.h */,
+				D077954F2101947B00207380 /* plist++.h */,
+				D07795502101947B00207380 /* time64_limits.h */,
+				D07795512101947B00207380 /* ptrarray.c */,
+				D07795522101947B00207380 /* hashtable.c */,
+				D07795532101947B00207380 /* Array.h */,
+				D07795542101947B00207380 /* base64.c */,
+				D07795552101947B00207380 /* time64.h */,
+				D07795562101947B00207380 /* Integer.cpp */,
+				D07795572101947B00207380 /* Boolean.cpp */,
+				D07795582101947B00207380 /* Integer.h */,
+				D07795592101947B00207380 /* Key.cpp */,
+				D077955A2101947B00207380 /* plist.h */,
+				D077955B2101947B00207380 /* Dictionary.cpp */,
+				D077955C2101947B00207380 /* Uid.h */,
+				D077955D2101947B00207380 /* String.h */,
+			);
+			path = libplist;
+			sourceTree = "<group>";
+		};
+		D07795322101947B00207380 /* libcnary */ = {
+			isa = PBXGroup;
+			children = (
+				D07795332101947B00207380 /* list.c */,
+				D07795342101947B00207380 /* node_list.c */,
+				D07795352101947B00207380 /* node_iterator.c */,
+				D07795362101947B00207380 /* node.h */,
+				D07795372101947B00207380 /* iterator.c */,
+				D07795382101947B00207380 /* list.h */,
+				D07795392101947B00207380 /* object.h */,
+				D077953A2101947B00207380 /* node_iterator.h */,
+				D077953B2101947B00207380 /* node_list.h */,
+				D077953C2101947B00207380 /* iterator.h */,
+				D077953D2101947B00207380 /* node.c */,
+			);
+			path = libcnary;
+			sourceTree = "<group>";
+		};
+		D077955E2101947B00207380 /* Signing */ = {
+			isa = PBXGroup;
+			children = (
+				D077955F2101947B00207380 /* EESigning.mm */,
+				D07795602101947B00207380 /* EESigning.h */,
+			);
+			path = Signing;
+			sourceTree = "<group>";
+		};
+		D07795622101947B00207380 /* Provisioning */ = {
+			isa = PBXGroup;
+			children = (
+				D07795632101947B00207380 /* EEProvisioning.h */,
+				D07795642101947B00207380 /* EEProvisioning.mm */,
+			);
+			path = Provisioning;
+			sourceTree = "<group>";
+		};
+		D07795652101947B00207380 /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				D07795662101947B00207380 /* verisign-2048-128.pem */,
+				D07795672101947B00207380 /* apple-dev.pem */,
+				D07795682101947B00207380 /* verisign-1024-128.pem */,
+				D07795692101947B00207380 /* apple-ios.pem */,
+				D077956A2101947B00207380 /* verisign-2048-256.pem */,
+			);
+			path = Certificates;
+			sourceTree = "<group>";
+		};
+		D077956B2101947B00207380 /* SAMKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				D077956C2101947B00207380 /* SAMKeychain.h */,
+				D077956D2101947B00207380 /* SAMKeychain */,
+				D07795702101947B00207380 /* SAMKeychain.m */,
+			);
+			path = SAMKeychain;
+			sourceTree = "<group>";
+		};
+		D077956D2101947B00207380 /* SAMKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				D077956E2101947B00207380 /* SAMKeychainQuery.m */,
+				D077956F2101947B00207380 /* SAMKeychainQuery.h */,
+			);
+			path = SAMKeychain;
+			sourceTree = "<group>";
+		};
+		D07795712101947B00207380 /* ldid */ = {
+			isa = PBXGroup;
+			children = (
+				D07795722101947B00207380 /* ldid.hpp */,
+				D07795732101947B00207380 /* sha1.h */,
+				D07795742101947B00207380 /* ldid.cpp */,
+				D07795752101947B00207380 /* lookup2.c */,
+			);
+			path = ldid;
+			sourceTree = "<group>";
+		};
+		D07795772101947B00207380 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				D07795782101947B00207380 /* ZipArchive.h */,
+				D07795792101947B00207380 /* minizip */,
+				D077959D2101947B00207380 /* SSZipArchive.h */,
+				D077959E2101947B00207380 /* SSZipCommon.h */,
+				D077959F2101947B00207380 /* SSZipArchive.m */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		D07795792101947B00207380 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				D077957A2101947B00207380 /* crypt.c */,
+				D077957B2101947B00207380 /* unzip.c */,
+				D077957C2101947B00207380 /* zip.c */,
+				D077957D2101947B00207380 /* minishared.h */,
+				D077957E2101947B00207380 /* ioapi.c */,
+				D077957F2101947B00207380 /* ioapi_mem.h */,
+				D07795802101947B00207380 /* ioapi_buf.c */,
+				D07795812101947B00207380 /* crypt.h */,
+				D07795822101947B00207380 /* zip.h */,
+				D07795832101947B00207380 /* unzip.h */,
+				D07795842101947B00207380 /* ioapi_mem.c */,
+				D07795852101947B00207380 /* minishared.c */,
+				D07795862101947B00207380 /* ioapi.h */,
+				D07795872101947B00207380 /* ioapi_buf.h */,
+				D07795882101947B00207380 /* aes */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		D07795882101947B00207380 /* aes */ = {
+			isa = PBXGroup;
+			children = (
+				D07795892101947B00207380 /* prng.h */,
+				D077958A2101947B00207380 /* aes_ni.h */,
+				D077958B2101947B00207380 /* aeskey.c */,
+				D077958C2101947B00207380 /* hmac.c */,
+				D077958D2101947B00207380 /* aestab.h */,
+				D077958E2101947B00207380 /* pwd2key.h */,
+				D077958F2101947B00207380 /* aescrypt.c */,
+				D07795902101947B00207380 /* fileenc.c */,
+				D07795912101947B00207380 /* aesopt.h */,
+				D07795922101947B00207380 /* sha1.c */,
+				D07795932101947B00207380 /* brg_types.h */,
+				D07795942101947B00207380 /* hmac.h */,
+				D07795952101947B00207380 /* aes_ni.c */,
+				D07795962101947B00207380 /* brg_endian.h */,
+				D07795972101947B00207380 /* prng.c */,
+				D07795982101947B00207380 /* aes.h */,
+				D07795992101947B00207380 /* pwd2key.c */,
+				D077959A2101947B00207380 /* aestab.c */,
+				D077959B2101947B00207380 /* sha1.h */,
+				D077959C2101947B00207380 /* fileenc.h */,
+			);
+			path = aes;
+			sourceTree = "<group>";
+		};
+		D07AA5F4210273CB00EC6524 /* RPVAccountChecker */ = {
+			isa = PBXGroup;
+			children = (
+				D07AA5F1210273BE00EC6524 /* RPVAccountChecker.h */,
+				D07AA5F2210273BE00EC6524 /* RPVAccountChecker.m */,
+			);
+			path = RPVAccountChecker;
+			sourceTree = "<group>";
+		};
+		DF5269F4F2A3C35BCA170F91 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F08B2A958E5868159BF1D85C /* libPods-App Installer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,9 +615,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D01EA8D31EFCCD9D006FB508 /* Build configuration list for PBXNativeTarget "App Installer" */;
 			buildPhases = (
+				6AC17FF70B564DE7C48C9B37 /* [CP] Check Pods Manifest.lock */,
 				D01EA8A21EFCCD9D006FB508 /* Sources */,
 				D01EA8A31EFCCD9D006FB508 /* Frameworks */,
 				D01EA8A41EFCCD9D006FB508 /* Resources */,
+				C03EAE137EC481665B2614C5 /* [CP] Embed Pods Frameworks */,
+				8FD1CDCA6DCB10BB00BCBCB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -235,7 +673,7 @@
 		D01EA89E1EFCCD9D006FB508 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Low Budget Animation Studios";
 				TargetAttributes = {
 					D01EA8A51EFCCD9D006FB508 = {
@@ -283,8 +721,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03166801EFCD62400E8EB77 /* general.plist in Resources */,
+				D07795C12101947B00207380 /* verisign-2048-256.pem in Resources */,
 				D01EA8B61EFCCD9D006FB508 /* Assets.xcassets in Resources */,
+				D07795BF2101947B00207380 /* verisign-1024-128.pem in Resources */,
 				D01EA8B41EFCCD9D006FB508 /* Main.storyboard in Resources */,
+				D07795BE2101947B00207380 /* apple-dev.pem in Resources */,
+				D07795BD2101947B00207380 /* verisign-2048-128.pem in Resources */,
+				D07795C02101947B00207380 /* apple-ios.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,19 +747,124 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6AC17FF70B564DE7C48C9B37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-App Installer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FD1CDCA6DCB10BB00BCBCB0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App Installer/Pods-App Installer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C03EAE137EC481665B2614C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-App Installer/Pods-App Installer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D01EA8A21EFCCD9D006FB508 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07795D32101947B00207380 /* aes_ni.c in Sources */,
+				D07795CF2101947B00207380 /* hmac.c in Sources */,
+				D07795A52101947B00207380 /* list.c in Sources */,
+				D07795B02101947B00207380 /* Data.cpp in Sources */,
+				D07795B82101947B00207380 /* Boolean.cpp in Sources */,
+				D07795CE2101947B00207380 /* aeskey.c in Sources */,
+				D07795B32101947B00207380 /* bytearray.c in Sources */,
+				D07795C52101947B00207380 /* lookup2.c in Sources */,
+				D077951D2101564400207380 /* AppResigner.m in Sources */,
+				D07795D42101947B00207380 /* prng.c in Sources */,
+				D07795C22101947B00207380 /* SAMKeychainQuery.m in Sources */,
 				D01EA8B11EFCCD9D006FB508 /* ViewController.m in Sources */,
+				D07795AC2101947B00207380 /* Date.cpp in Sources */,
+				D07795A12101947B00207380 /* EEAppleServices.m in Sources */,
+				D07795C42101947B00207380 /* ldid.cpp in Sources */,
+				D07795A02101947B00207380 /* NSData+GZIP.m in Sources */,
 				C3B543FF1F02937F000128D3 /* InstallButton.m in Sources */,
 				C35A8BD51F09F48600E468A1 /* ImpressionableButton.m in Sources */,
+				D07795B52101947B00207380 /* hashtable.c in Sources */,
+				D07795B92101947B00207380 /* Key.cpp in Sources */,
+				D07795A32101947B00207380 /* time64.c in Sources */,
+				D07795A72101947B00207380 /* node_iterator.c in Sources */,
+				D07795B12101947B00207380 /* Array.cpp in Sources */,
+				D07795CD2101947B00207380 /* minishared.c in Sources */,
+				D07795AE2101947B00207380 /* String.cpp in Sources */,
+				D07795BA2101947B00207380 /* Dictionary.cpp in Sources */,
+				D07795D02101947B00207380 /* aescrypt.c in Sources */,
 				B80B19EE1F05E9120048E629 /* AppInstaller.m in Sources */,
+				D07795A22101947B00207380 /* bplist.c in Sources */,
+				D07795BB2101947B00207380 /* EESigning.mm in Sources */,
 				C35A8BD21F09F44B00E468A1 /* TwitterButton.m in Sources */,
+				D07795A92101947B00207380 /* node.c in Sources */,
+				D07795B22101947B00207380 /* Real.cpp in Sources */,
+				D07795BC2101947B00207380 /* EEProvisioning.mm in Sources */,
+				D07795D52101947B00207380 /* pwd2key.c in Sources */,
 				D01EA8AE1EFCCD9D006FB508 /* AppDelegate.m in Sources */,
+				D07795C62101947B00207380 /* EEBackend.m in Sources */,
+				D07795AF2101947B00207380 /* plist.c in Sources */,
+				D07795A82101947B00207380 /* iterator.c in Sources */,
+				D07795AB2101947B00207380 /* Uid.cpp in Sources */,
+				D07795AD2101947B00207380 /* Node.cpp in Sources */,
+				D07795B42101947B00207380 /* ptrarray.c in Sources */,
+				D07795A42101947B00207380 /* xplist.c in Sources */,
+				D07795C82101947B00207380 /* unzip.c in Sources */,
+				D07795A62101947B00207380 /* node_list.c in Sources */,
+				D07795B72101947B00207380 /* Integer.cpp in Sources */,
 				D01EA8AB1EFCCD9D006FB508 /* main.m in Sources */,
+				D07795CA2101947B00207380 /* ioapi.c in Sources */,
 				C35A8BD11F09F44200E468A1 /* PaddedTextField.m in Sources */,
+				D07795CB2101947B00207380 /* ioapi_buf.c in Sources */,
+				D07795C92101947B00207380 /* zip.c in Sources */,
+				D07795D12101947B00207380 /* fileenc.c in Sources */,
+				D07795C32101947B00207380 /* SAMKeychain.m in Sources */,
+				D07795D22101947B00207380 /* sha1.c in Sources */,
+				D07795CC2101947B00207380 /* ioapi_mem.c in Sources */,
+				D07795D62101947B00207380 /* aestab.c in Sources */,
+				D07795D72101947B00207380 /* SSZipArchive.m in Sources */,
+				D07795B62101947B00207380 /* base64.c in Sources */,
+				D07795C72101947B00207380 /* crypt.c in Sources */,
+				D07795AA2101947B00207380 /* Structure.cpp in Sources */,
+				D07AA5F7210273F800EC6524 /* SettingsTableViewController.m in Sources */,
+				D07AA5F3210273BF00EC6524 /* RPVAccountChecker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,15 +921,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -422,15 +978,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -457,14 +1021,10 @@
 		};
 		D01EA8D41EFCCD9D006FB508 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEB8B1503AB6123841BC69AF /* Pods-App Installer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5RL29674RT;
-				HEADER_SEARCH_PATHS = (
-					HEADER_SEARCH_PATHS,
-					"=",
-					"$(SDKROOT)/usr/include/libxml2",
-				);
 				INFOPLIST_FILE = "App Installer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lbastudios.App-Installer";
@@ -474,14 +1034,10 @@
 		};
 		D01EA8D51EFCCD9D006FB508 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4E719A80C2A389496A33388 /* Pods-App Installer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5RL29674RT;
-				HEADER_SEARCH_PATHS = (
-					HEADER_SEARCH_PATHS,
-					"=",
-					"$(SDKROOT)/usr/include/libxml2",
-				);
 				INFOPLIST_FILE = "App Installer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lbastudios.App-Installer";

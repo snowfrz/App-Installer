@@ -8,9 +8,12 @@
 
 #import "ViewController.h"
 #import "AppInstaller.h"
+#import "AppResigner.h"
+#import "SAMKeychain.h"
 
 @interface ViewController () {
     AppInstaller *installer;
+    AppResigner *resigner;
     NSString *external_url;
 }
 
@@ -25,7 +28,27 @@
 
 - (void)viewDidLoad
 {
-    versionLabel.text = [@"v" stringByAppendingString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateProgress) name:@"ProgressUpdated" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(progressDoneWithNotification:) name:@"ProgressDone" object:nil];
+    
+    NSString * versionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    
+    while ([[versionString substringFromIndex:[versionString length] - 1] isEqualToString:@"."] || [[versionString substringFromIndex:[versionString length] - 1] isEqualToString:@"0"]) {
+        versionString = [versionString substringToIndex:[versionString length] - 1];
+    }
+    
+    versionLabel.text = [@"v" stringByAppendingString:versionString];
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"resign"])
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"resign"];
+    }
+    
+    [progressView setProgress:0.0 animated:NO];
+    
+    BOOL resign = [[[NSUserDefaults standardUserDefaults] objectForKey:@"resign"] boolValue];
+    
+    [resignSwitch setOn: resign];
     
     [self checkForUpdates];
     
@@ -36,6 +59,7 @@
     [URLTextField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     
     installer = [AppInstaller new];
+    resigner = [AppResigner new];
 }
 
 - (void)viewDidLayoutSubviews
@@ -106,6 +130,11 @@
 
 
 #pragma mark – Interface Actions
+
+- (IBAction)resignSwitchChanged:(UISwitch *)sender
+{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:sender.isOn] forKey:@"resign"];
+}
 
 - (IBAction)openTwitter:(UIButton *)sender
 {
@@ -182,29 +211,64 @@
 
 - (IBAction)installApp
 {
-    NSLog(@"Installing app...");
     // if we have an external url use that else use the text field
     external_url = external_url ? : URLTextField.text;
     URLTextField.text = external_url;
     
-    // update the UI to show were working
-    [self setInstallButtonToInstalling:YES];
     
-    [installer installAppWithURL:external_url completionHandler:^(NSError *error) {
+    void(^installError)(NSError*) = ^(NSError *error) {
         // handle updating the UI
-        [self setInstallButtonToInstalling:NO];
+        [self setInstallButtonToState:nil andInstalling:NO];
         
         // clear our url when finished
-        external_url = nil;
+        self->external_url = nil;
         
         // if the install request failed
         if (error)
         {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Upload Failed" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Install Failed" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
             [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
         }
-    }];
+    };
+    
+    if (!resignSwitch.isOn)
+    {
+        // update the UI to show we're working
+        [self setInstallButtonToState:@"Installing..." andInstalling:YES];
+        [self classicInstallWithCompletionHandler:installError];
+    }
+    else
+    {
+        NSString * username = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleIDUsername"];
+        NSString * password = [SAMKeychain passwordForService:@"AppInstallerAppleID" account:username];
+        NSString * udid = [[NSUserDefaults standardUserDefaults] objectForKey:@"UDID"];
+        
+        if ([username length] == 0 || [password length] == 0 || [udid length] == 0)
+        {
+            [self displayAlertWithTitle:@"Not logged in" andMessage:@"Tap the gear in the top left hand corner, then log in with the required credentials" plusActions:nil];
+        }
+        else
+        {
+            // update the UI to show we're working
+            [self setInstallButtonToState:@"Downloading..." andInstalling:YES];
+            [self resignInstallWithCompletionHandler:installError];
+        }
+    }
+}
+
+- (void)resignInstallWithCompletionHandler:(void(^)(NSError*))error
+{
+    NSLog(@"Installing app...");
+    
+    [resigner resignAppAtURL:external_url completionHandler:error];
+}
+
+- (void)classicInstallWithCompletionHandler:(void(^)(NSError*))error
+{
+    NSLog(@"Installing app...");
+    
+    [installer installAppWithURL:external_url completionHandler:error];
 }
 
 - (IBAction)scarButton
@@ -213,16 +277,49 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"App-prefs:root=General&path=STORAGE_ICLOUD_USAGE/DEVICE_USAGE"]];
 }
 
--(void)setInstallButtonToInstalling:(BOOL)installing
+-(void)setInstallButtonToState:(nullable NSString *)installState andInstalling:(BOOL)installing
 {
     installButton.userInteractionEnabled = !installing;
-    [installButton setTitle:installing ? @"Installing…" : @"Install" forState:UIControlStateNormal];
+    [installButton setTitle:installing ? installState : @"Install" forState:UIControlStateNormal];
 }
 
 - (void)downloadAppAt:(NSString *)plistDownloadLink
 {
     NSLog(@"path: %@", plistDownloadLink);
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[@"itms-services://?action=download-manifest&url=" stringByAppendingString:plistDownloadLink]]];
+}
+
+- (void)updateProgress
+{
+    [progressView setProgress:resigner.progress animated:YES];
+}
+
+- (void)progressDoneWithNotification:(NSNotification *)notification
+{
+    NSString *message = notification.userInfo[@"Message"];
+    BOOL installing = [notification.userInfo[@"Installing"] boolValue];
+    
+    [self setInstallButtonToState:message andInstalling:installing];
+    [progressView setProgress:0 animated:NO];
+}
+
+- (void)displayAlertWithTitle:(NSString *)title andMessage:(NSString *)message plusActions:(nullable NSArray *)actions
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    if (actions == nil)
+    {
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    }
+    else
+    {
+        for (UIAlertAction * action in actions)
+        {
+            [alert addAction:action];
+        }
+    }
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
