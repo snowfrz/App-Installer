@@ -21,7 +21,7 @@ Issues are not necessarily for the current *release* of App Installer, but are f
 - Apps signed with a free developer account sometimes do not install for some reason. Please contact one of us if you manage to install an app signed with a free developer account.
 
 **Resign Install Mode**
-- Resigning succeeds, but the newly signed app does not install (iOS 11 and below), or does not open (iOS 12)
+- Resigning using [libProvision](https://github.com/Matchstic/Extender-Installer/tree/new-backend/Shared/libProvision) succeeds, but the newly signed app does not install (iOS 11 and below), or does not open (iOS 12)
 - Code is poorly written
 - No progress bar after download stage
 
