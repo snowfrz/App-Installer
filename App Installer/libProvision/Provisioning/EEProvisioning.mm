@@ -26,6 +26,9 @@
 #import <UIKit/UIKit.h> // For device name
 #endif
 
+
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
 @implementation EEProvisioning
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -70,6 +73,8 @@
     
     [self _provisioningStageOneWithIdentifier:@"" withTeamIDCheck:teamIDCallback andCallback:^(NSError *error) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error);
             return;
         }
@@ -77,6 +82,8 @@
         [EEAppleServices addDevice:udid deviceName:name forTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
             
             if (error) {
+                ALog(@"ERROR: %@", error.localizedDescription);
+                
                 completionHandler(error);
                 return;
             }
@@ -86,6 +93,8 @@
             int resultCode = [[plist objectForKey:@"resultCode"] intValue];
             if (resultCode != 0) {
                 NSError *error = [EEProvisioning _errorFromString:[plist objectForKey:@"resultString"]];
+                ALog(@"ERROR: %@", error.localizedDescription);
+                
                 completionHandler(error);
                 return;
             }
@@ -101,12 +110,16 @@
     
     [self _provisioningStageOneWithIdentifier:@"" withTeamIDCheck:teamIDCallback andCallback:^(NSError *error) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error);
             return;
         }
         
         [EEAppleServices listAllDevelopmentCertificatesForTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
             if (error) {
+                ALog(@"ERROR: %@", error.localizedDescription);
+                
                 completionHandler(error);
                 return;
             }
@@ -132,6 +145,8 @@
                 [EEAppleServices revokeCertificateForSerialNumber:serialNumber andTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
                     
                     if (error) {
+                        ALog(@"ERROR: %@", error.localizedDescription);
+                        
                         completionHandler(error);
                         return;
                     }
@@ -172,18 +187,24 @@
     
     [self _provisioningStageOneWithIdentifier:identifier withTeamIDCheck:teamIDCallback andCallback:^(NSError *error) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error, nil, nil, nil, nil);
             return;
         }
         
         [self _provisioningStageTwoWithIdentifier:identifier andCallback:^(NSError *error, NSString *privateKey, NSDictionary *certificate) {
             if (error) {
+                ALog(@"ERROR: %@", error.localizedDescription);
+                
                 completionHandler(error, nil, nil, nil, nil);
                 return;
             }
             
             [self _provisioningStageThreeWithIdentifier:identifier binaryLocation:binaryLocation andCallback:^(NSError *error, NSString *appIdId, NSDictionary *entitlements) {
                 if (error) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     completionHandler(error, nil, nil, nil, nil);
                     return;
                 }
@@ -217,6 +238,8 @@
             
             [EEAppleServices updateCurrentTeamIDWithTeamIDCheck:teamIDCallback andCallback:^(NSError *error, NSString *teamid) {
                 if (error) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     NSError *error2 = [EEProvisioning _errorFromString:[@"updateCurrentTeamIDWithCompletionHandler: " stringByAppendingString:error.localizedDescription]];
                     completionHandler(error2);
                     return;
@@ -227,6 +250,8 @@
                 NSLog(@"Team ID: %@", teamid);
                 
                 if ([teamid isEqualToString:@""]) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     // We shouldn't ever reach this, but the logic is present just in case.
                     NSError *error = [EEProvisioning _errorFromString:@"updateCurrentTeamIDWithCompletionHandler: No Team ID present! This is *really* bad."];
                     completionHandler(error);
@@ -235,6 +260,8 @@
                 }
             }];
         } else {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error);
         }
     }];
@@ -244,6 +271,8 @@
     
     [EEAppleServices signInWithUsername:username password:password andCompletionHandler:^(NSError *error, NSDictionary *plist) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error);
             return;
         }
@@ -276,6 +305,10 @@
         if (!error) {
             NSLog(@"We have a development certificate that can be used!");
         }
+        else
+        {
+            ALog(@"ERROR: %@", error.localizedDescription);
+        }
         
         completionHandler(error, privateKey, certificate);
     }];
@@ -285,6 +318,8 @@
     
     [EEAppleServices listAllDevelopmentCertificatesForTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             NSError *error2 = [EEProvisioning _errorFromString:[@"listAllDevelopmentCertificatesForTeamID: " stringByAppendingString:error.localizedDescription]];
             completionHandler(error2, nil, nil);
             return;
@@ -362,6 +397,8 @@
                 [EEAppleServices revokeCertificateForSerialNumber:serialNumber andTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
                     
                     if (error) {
+                        ALog(@"ERROR: %@", error.localizedDescription);
+                        
                         // Handle error.
                         completionHandler(error, nil, nil);
                         return;
@@ -372,6 +409,8 @@
                     // Send in the new code-signing request to Apple.
                     [self _submitNewCodeSigningRequestForTeamID:[EEAppleServices currentTeamID] machineName:[self _nameForCurrentMachine] machineId:[self _identifierForCurrentMachine] withCallback:^(NSError *error, NSString *privateKey, NSDictionary *certificate) {
                         if (error) {
+                            ALog(@"ERROR: %@", error.localizedDescription);
+                            
                             // Handle error.
                             completionHandler(error, nil, nil);
                             return;
@@ -397,6 +436,8 @@
                                               machineId:[self _identifierForCurrentMachine]
                                            withCallback:^(NSError *error, NSString *privateKey, NSDictionary *certificate) {
                 if (error) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     // Handle error.
                     completionHandler(error, nil, nil);
                     return;
@@ -448,6 +489,8 @@
     int ret = [self _generateCodeSigningRequest:&privateKey :&codeSigningRequest];
     if (ret != 1) {
         NSError *error = [EEProvisioning _errorFromString:@"submitDevelopmentCSR: Failed to generate a code signing request"];
+        ALog(@"ERROR: %@", error.localizedDescription);
+        
         completionHandler(error, nil, nil);
         return;
     }
@@ -460,6 +503,8 @@
     // Now that we have a CSR and private key, we can submit the CSR to Apple.
     [EEAppleServices submitCodeSigningRequestForTeamID:teamid machineName:machineName machineID:machineId codeSigningRequest:codeSigningRequest withCompletionHandler:^(NSError *error, NSDictionary *plist) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error, nil, nil);
             return;
         }
@@ -474,6 +519,8 @@
             NSString *desc = [NSString stringWithFormat:@"submitDevelopmentCSR: %@", resultString];
             
             NSError *error = [EEProvisioning _errorFromString:desc];
+            
+            ALog(@"ERROR: %@", error.localizedDescription);
             
             completionHandler(error, nil, nil);
             return;
@@ -495,6 +542,8 @@
             
             [EEAppleServices listAllDevelopmentCertificatesForTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
                 if (error) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     completionHandler(error, nil, nil);
                     return;
                 }
@@ -520,6 +569,8 @@
                     
                     NSError *error = [EEProvisioning _errorFromString:desc];
                     
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     completionHandler(error, nil, nil);
                 }
             }];
@@ -528,6 +579,8 @@
             NSString *desc = [NSString stringWithFormat:@"submitDevelopmentCSR: Received a result of '%@' for '%@'", statusString, typeString];
             
             NSError *error = [EEProvisioning _errorFromString:desc];
+            
+            ALog(@"ERROR: %@", error.localizedDescription);
             
             completionHandler(error, nil, nil);
         }
@@ -648,7 +701,13 @@ free_all:
     
     [self _addOrUpdateApplicationID:identifier
                      binaryLocation:binaryLocation
-              withCompletionHandler:^(NSError *error, NSString *appIdId, NSDictionary *entitlements) {
+              withCompletionHandler:^(NSError *error, NSString *appIdId, NSDictionary *entitlements)
+    {
+        if (error)
+        {
+            ALog(@"ERROR: %@", error.localizedDescription);
+        }
+        
         completionHandler(error, appIdId, entitlements);
     }];
 }
@@ -657,6 +716,8 @@ free_all:
     
     [EEAppleServices listAllApplicationsForTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             NSError *err = [EEProvisioning _errorFromString:[@"listAllApplicationsForTeamID: " stringByAppendingString:error.localizedDescription]];
             completionHandler(err, @"", nil);
             return;
@@ -664,7 +725,12 @@ free_all:
         
         int resultCode = [[plist objectForKey:@"resultCode"] intValue];
         if (resultCode != 0) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             NSError *err = [EEProvisioning _errorFromString:[@"listAllApplicationsForTeamID: " stringByAppendingString:[plist objectForKey:@"resultString"]]];
+            
+            ALog(@"ERROR: %@", err.localizedDescription);
+            
             completionHandler(err, @"", nil);
             return;
         }
@@ -772,14 +838,24 @@ free_all:
             
             [EEAppleServices addApplicationId:identifier name:name enabledFeatures:enabledFeatures teamID:[EEAppleServices currentTeamID] entitlements:entitlements withCompletionHandler:^(NSError *error, NSDictionary *plist) {
                 if (error) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     NSError *err = [EEProvisioning _errorFromString:[@"addApplicationId: " stringByAppendingString:error.localizedDescription]];
+                    
+                    ALog(@"ERROR: %@", err.localizedDescription);
+                    
                     completionHandler(err, @"", nil);
                     return;
                 }
                 
                 int resultCode = [[plist objectForKey:@"resultCode"] intValue];
                 if (resultCode != 0) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     NSError *err = [EEProvisioning _errorFromString:[@"addApplicationId: " stringByAppendingString:[plist objectForKey:@"userString"]]];
+                    
+                    ALog(@"ERROR: %@", err.localizedDescription);
+                    
                     completionHandler(err, @"", nil);
                     return;
                 }
@@ -797,6 +873,8 @@ free_all:
                     [self _recursivelyAssignApplicationIdId:newAppIdId toApplicationGroups:applicationGroups interimAppGroups:[NSMutableArray array] withCompletionHandler:^(NSError *error, NSArray *output) {
                         
                         if (error) {
+                            ALog(@"ERROR: %@", error.localizedDescription);
+                            
                             completionHandler(error, nil, nil);
                             return;
                         }
@@ -817,14 +895,24 @@ free_all:
             
             [EEAppleServices updateApplicationIdId:appIdIdIfExists enabledFeatures:enabledFeatures teamID:[EEAppleServices currentTeamID] entitlements:entitlements withCompletionHandler:^(NSError *error, NSDictionary *plist) {
                 if (error) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     NSError *err = [EEProvisioning _errorFromString:[@"updateApplicationIdId: " stringByAppendingString:error.localizedDescription]];
+                    
+                    ALog(@"ERROR: %@", err.localizedDescription);
+                    
                     completionHandler(err, @"", nil);
                     return;
                 }
                 
                 int resultCode = [[plist objectForKey:@"resultCode"] intValue];
                 if (resultCode != 0) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     NSError *err = [EEProvisioning _errorFromString:[@"updateApplicationIdId: " stringByAppendingString:[plist objectForKey:@"userString"]]];
+                    
+                    ALog(@"ERROR: %@", err.localizedDescription);
+                    
                     completionHandler(err, @"", nil);
                     return;
                 }
@@ -842,6 +930,8 @@ free_all:
                     [self _recursivelyAssignApplicationIdId:newAppIdId toApplicationGroups:applicationGroups interimAppGroups:[NSMutableArray array] withCompletionHandler:^(NSError *error, NSArray *output) {
                         
                         if (error) {
+                            ALog(@"ERROR: %@", error.localizedDescription);
+                            
                             completionHandler(error, nil, nil);
                             return;
                         }
@@ -873,6 +963,8 @@ free_all:
     [self _assignApplicationIdId:applicationIdId toGroupIfNecessary:nextApplicationGroup withCompletionHandler:^(NSError *error, NSString *groupIdentifier) {
         
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error, nil);
             return;
         }
@@ -891,12 +983,19 @@ free_all:
     [EEAppleServices listAllApplicationGroupsForTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
         
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error, nil);
             return;
         }
         
         if ([[plist objectForKey:@"resultCode"] intValue] != 0) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             NSError *error = [EEProvisioning _errorFromString:[plist objectForKey:@"resultString"]];
+            
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error, nil);
             return;
         }
@@ -941,6 +1040,8 @@ free_all:
             [self _assignAppIdId:applicationIdId toApplicationGroupIdentifier:applicationGroupEntryIfExists withCompletionHandler:^(NSError *error) {
                 
                 if (error) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     completionHandler(error, nil);
                     return;
                 }
@@ -958,12 +1059,19 @@ free_all:
             [EEAppleServices addApplicationGroupWithIdentifier:newGroupIdentifier andName:newGroupName forTeamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
              
                 if (error) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     completionHandler(error, nil);
                     return;
                 }
                 
                 if ([[plist objectForKey:@"resultCode"] intValue] != 0) {
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     NSError *error = [EEProvisioning _errorFromString:[plist objectForKey:@"resultString"]];
+                    
+                    ALog(@"ERROR: %@", error.localizedDescription);
+                    
                     completionHandler(error, nil);
                     return;
                 }
@@ -975,6 +1083,8 @@ free_all:
                 [self _assignAppIdId:applicationIdId toApplicationGroupIdentifier:newGroupName withCompletionHandler:^(NSError *error) {
                     
                     if (error) {
+                        ALog(@"ERROR: %@", error.localizedDescription);
+                        
                         completionHandler(error, nil);
                         return;
                     }
@@ -993,12 +1103,19 @@ free_all:
     
     [EEAppleServices assignApplicationGroup:groupIdentifier toApplicationIdId:appIdId teamID:[EEAppleServices currentTeamID] withCompletionHandler:^(NSError *error, NSDictionary *plist) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error);
             return;
         }
         
         if ([[plist objectForKey:@"resultCode"] intValue] != 0) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             NSError *error = [EEProvisioning _errorFromString:[plist objectForKey:@"resultString"]];
+            
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error);
             return;
         }
@@ -1037,13 +1154,23 @@ free_all:
     
     [EEAppleServices getProvisioningProfileForAppIdId:appIdId withTeamID:[EEAppleServices currentTeamID] andCompletionHandler:^(NSError *error, NSDictionary *plist) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             NSError *err = [EEProvisioning _errorFromString:[@"getProvisioningProfileForAppIdId: " stringByAppendingString:error.localizedDescription]];
+            
+            ALog(@"ERROR: %@", err.localizedDescription);
+            
             completionHandler(err, nil);
             return;
         }
                                      
         if ([[plist objectForKey:@"resultCode"] intValue] != 0) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             NSError *err = [EEProvisioning _errorFromString:[@"getProvisioningProfileForAppIdId: " stringByAppendingString:[plist objectForKey:@"resultString"]]];
+            
+            ALog(@"ERROR: %@", err.localizedDescription);
+            
             completionHandler(err, nil);
             return;
         }
@@ -1054,7 +1181,12 @@ free_all:
             
             completionHandler(nil, encodedProfile);
         } @catch (NSException *e) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             NSError *err = [EEProvisioning _errorFromString:[@"getProvisioningProfileForAppIdId: " stringByAppendingString:e.reason]];
+            
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(err, nil);
         }
     }];
@@ -1071,6 +1203,8 @@ free_all:
                                                    andTeamID:[EEAppleServices currentTeamID]
                                        withCompletionHandler:^(NSError *error, NSDictionary *plist) {
         if (error) {
+            ALog(@"ERROR: %@", error.localizedDescription);
+            
             completionHandler(error);
             return;
         }
