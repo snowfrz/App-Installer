@@ -613,7 +613,7 @@
     
     // 1. generate rsa key
     bne = BN_new();
-    ret = BN_set_word(bne,e);
+    ret = BN_set_word(bne,int(e));
     if(ret != 1){
         goto free_all;
     }
